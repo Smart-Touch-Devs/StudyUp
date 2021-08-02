@@ -30,6 +30,8 @@ body {
 .hover-text-smt-primary:hover {color: var(--smt-primary);}
 .hover-text-smt-fifth:hover {color: var(--smt-fifth);}
 
+.border-smt-fourth {border: .5px solid var(--smt-fourth);}
+
 main {
     margin: 5.5% auto;
 }
@@ -59,7 +61,7 @@ main {
     box-shadow: 0 0 2px 2px var(--smt-primary);
 }
 
-.login div {
+.login div, .contacts div {
     width: 350px;
     height: fit-content;
 }
@@ -76,6 +78,13 @@ main {
     width: 99.5%;
     height: 40px;
     border: none;
+    outline: none;
+}
+
+textarea {
+    width: 99.5%;
+    height: 100%;
+    margin: auto;
     outline: none;
 }
 
