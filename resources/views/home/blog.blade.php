@@ -11,7 +11,7 @@
     </div>
 </div>
 <div class="container-fluid">
-    <div class="row">
+    <!-- <div class="row">
     @foreach($articles as $article)
         <div class="col-lg-7">
            
@@ -39,7 +39,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 
 @endsection

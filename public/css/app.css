@@ -203,3 +203,10 @@ a[href="/eye"]:hover{color: var(--smt-fourth);}
 .letter_size{
     font-size: 28px;
 }
+
+/* media queries contacts */
+
+/* moto g4 */
+@media (max-width:360px) {
+   
+}
