@@ -38,3 +38,5 @@ Route::get('/contacts', [ContactsController::class, 'index']);
 Route::resource('blog','BlogController');
 //Routes a propos
 Route::get('a_propos','AproposController@vue');
+//Routes books
+Route::resource('books','BooksController');
