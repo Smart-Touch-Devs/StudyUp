@@ -11,7 +11,7 @@
     </div>
 </div>
 <div class="fit-content">
-    <div class="fit-content p-5 bg-white rounded border shadow-sm">
+    <div class="fit-content p-5 padding bg-white rounded border shadow-sm">
         @error('error')
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             {{$message}}
@@ -22,12 +22,12 @@
         @enderror
         <form action="{{ route('login.auth') }}" method="post" class="fit-content login text-center">
             @csrf
-            <div class="fit-content mb-4 border rounded">
-                <input type="email" name="email" placeholder="Addresse e-mail" required class="border-0 text-indent-3">
+            <div class="fit-content c mb-4 border rounded">
+                <input type="email" name="email" placeholder="Adresse e-mail" required class="border-0 text-indent-3">
             </div>
-            <div class="d-flex justify-content-between align-items-center my-4 border rounded">
+            <div class="d-flex justify-content-between c align-items-center my-4 border rounded">
                 <input type="password" name="password" placeholder="Mot de passe" required class="login_password border-0 text-indent-3">
-                <a href="/eye" class="input-group-text text-decoration-none border-0"><i class="far fa-eye-slash"></i></a>
+                <!-- <a href="" class="input-group-text text-decoration-none border-0"><i class="far fa-eye-slash"></i></a> -->
             </div>
             <button type="submit" class="border-0 p-1 font-weight-bold word-space-1">Se connecter</button>
             <div class="my-4">

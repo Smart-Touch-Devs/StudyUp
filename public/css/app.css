@@ -174,7 +174,7 @@ a[href="/eye"]:hover{color: var(--smt-fourth);}
 
 .header-nav li .nav-link:hover {color: var(--smt-secondary);}
 
-.header-nav li:last-of-type .nav-link, .home_registerBtn {
+.header-nav li:last-of-type .nav-link {
     width: fit-content;
     height: fit-content;
     margin: 0;
@@ -186,7 +186,7 @@ a[href="/eye"]:hover{color: var(--smt-fourth);}
     font-weight: 500;
 }
 
-.header-nav li:last-of-type .nav-link:hover, .home_registerBtn:hover {
+.header-nav li:last-of-type .nav-link:hover {
     transition: filter .2s, color .2s;
     color: #ddd;
     filter: brightness(.90);
@@ -328,4 +328,111 @@ a[href="/eye"]:hover{color: var(--smt-fourth);}
 @keyframes spread {
     from {width: 0%;}
     to {width: 80%;}
+=======
+/* media queries login */
+
+/* moto g4 */
+@media (max-width:360px) {
+   .fit-content .flex img{
+       width: 200px;
+       height: 125px;
+   }
+   .fit-content .flex .display-4 ,span{
+       font-size: smaller;
+   }
+   
+ .padding {
+    padding: 0px;
+    }
+    .display-none , footer{
+        display: none;
+    }
+ .mx-auto button{
+    width: 150px;
+    margin-right: 50px;
+ }  
+  /* register bouton */
+  .fit-content .word-space-1{
+      margin-left: 40px;
+  }
+  .card-header h1{
+      font-size:x-large;
+  }
+  .text-md-right , input{
+      font-size: medium;
+  }
+}
+
+@media (max-width:414px) {
+    
+     .emailVerification{
+         display: none;
+     }
+  .mx-auto button{
+     width: 150px;
+     margin-right: 50px;
+  }  
+   /* register bouton */
+   .fit-content .word-space-1{
+       margin-left: 40px;
+   }
+   .card-header h1{
+       font-size:x-large;
+   }
+   .text-md-right , input{
+       font-size: medium;
+   }
+ }
+ 
+ 
+
+.c{
+    width: 300px;
+   
+}
+/* media queries login */
+
+/* moto g4 */
+
+
+
+
+
+
+
+
+.fond{
+    width: 100%;
+    height: 240px;
+}
+.fond_last{
+    width: 100px;
+    height: 120px;
+}
+.bordure{
+    border-top: 2px solid rgb(155, 155, 155);
+    width: 95%;
+    margin: auto;
+}
+.size_titre{
+    width: 300px;
+    height: 120px;
+}
+.bordure_bottom{
+    border-top: 2px solid rgb(172, 169, 169);
+    width: 100%;
+    height: 120px;
+    margin: auto;
+}
+.margin_top{
+    margin-top: 58px;
+}
+
+/* page a propo */
+
+.line{
+    line-height: 50px;
+}
+.top{
+    margin-top: 75px;
 }

@@ -15,8 +15,6 @@
             <div class="card-header">
                 <h3 class="card-title">Ajout d'articles</h3>
             </div>
-            <!-- /.card-header -->
-            <!-- form start -->
             @if ($message = Session::get('success'))
             <div class="alert alert-success alert-block">
                 <button type="button" class="close ml-1" data-dismiss="alert">
@@ -52,7 +50,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Contenu de l'article</label>
-                                <textarea type='text' name="contenu" id="summernote">
+                                <textarea type='text' class="form-control" name="contenu" id="Xy"></textarea>
                                
                                 {!! $errors->first('contenu', '<small class="text-danger">:message</small>') !!}
                             </div>

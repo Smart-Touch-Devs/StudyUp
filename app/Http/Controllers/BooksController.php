@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Authors;
 use App\Books;
+use App\Categories;
+use App\Countries;
+use App\Editors;
+use App\Languages;
 use Illuminate\Http\Request;
 
 class BooksController extends Controller
@@ -14,7 +19,12 @@ class BooksController extends Controller
      */
     public function index()
     {
-        //
+        $countries = Countries::all();
+        $languages = Languages::all();
+        $editors = Editors::all();
+        $authors = Authors::all();
+        $categories = Categories::all();
+        return view('books.books',compact('countries','languages','editors','authors','categories'));
     }
 
     /**
@@ -35,7 +45,47 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+     $request->validate([
+            'titre'=>'required|string|',
+            'categorie_id' => 'required',
+            'editeur_id' => 'required',
+            'langue_id' => 'required',
+            'description' => 'required|string|',
+            'page' => 'required|integer|',
+            'auteur_id' => 'required',
+            'pays_id' => 'required',
+            'prix' => 'required|integer|',
+            'photo' => '|image|',
+        ]);
+
+        $input = $request->all();
+        if ($image = $request->file('photo')) {
+            $destinationPath = 'image/';
+            $picture = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $picture);
+            $input['photo'] = "$picture";
+        }
+        Books::create($input);
+        
+        // $image = request('photo')->store('image','public');
+               
+        
+        // Books::create([
+        //     'titre'=>request('titre'),
+        //     'categorie_id'=>request('categorie_id'),
+        //     'editeur_id'=>request('editeur_id'),
+        //     'langue_id'=>request('langue_id'),
+        //     'description'=>request('description'),
+        //     'page'=>request('page'),
+        //     'auteur_id'=>request('auteur_id'),
+        //     'pays_id'=>request('pays_id'),
+        //     'prix'=>request('prix'),
+        //     'meuble'=>request('meuble'),
+        //     'photo'=>request('photo'),
+        //     'photo'=>$image,
+    
+       // ]);
+        return redirect()->intended('books')->with('success', "L'article a été ajouté avec succes");
     }
 
     /**
