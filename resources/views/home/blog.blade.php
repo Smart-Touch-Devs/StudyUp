@@ -12,9 +12,10 @@
 </div>
 <div class="container-fluid ">
     <div class="row  ">
-        @foreach($articles as $article)
+      
         <div class="col-lg-7 mb-5">
             <div class="card">
+            @foreach($articles as $article)
                 <div class="fond text-center " style='background: {{$article->color}};'>
                     <img src="{{asset('image').'/'.$article->photo}}" class="mt-3" width="175px" height="87%" alt="...">
                 </div>
@@ -25,10 +26,10 @@
                         <h6 class="my-2">Publié le {{ date('d-m-Y',strtotime($article->created_at ))}}</h6>
                     </div>
                 </div>
-
+                @endforeach
             </div>
         </div>
-        @endforeach
+       
 
         <div class="col-lg-5">
             <div class="card " style="width: 100%">
