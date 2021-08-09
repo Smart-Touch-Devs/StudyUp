@@ -10,31 +10,43 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
-    <div class="home_container d-flex flex-column">
-        <header class="navbar navbar-light d-flex bg-smt-primary py-2 m-0">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="{{asset('dist/img/logo.png')}}" width="50" height="50" class="d-inline-block align-top bg-light rounded-circle mr-2" alt="">
-                <span class="h3 text-white font-weight-bold">StudyUp</span>
-            </a>
-            <ul class="nav justify-content-end header-nav">
-                <li class="nav-item">
-                  <a class="nav-link font-weight-bold" href="#">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link font-weight-bold" href="#">FAQs</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link font-weight-bold" href="#">Contacter</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link font-weight-bold" href="#">À propos</a>
-                  </li>
-                <li class="nav-item">
-                  <a class="nav-link font-weight-bold" href="#">Se connecter</a>
-                </li>
-            </ul>
-        </header>
+<body style="background: #fff;">
+    <div class="home_container mx-auto d-flex flex-column">
+        <div style="width: 92%;" class="mx-auto">
+            <header class="navbar navbar-light d-flex ustify-content-space-between bg-smt-primary py-2 m-0">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="{{asset('dist/img/logo.png')}}" width="50" height="50" class="d-inline-block align-top bg-light rounded-circle mr-2" alt="">
+                    <span class="h3 text-white font-weight-bold">StudyUp</span>
+                </a>
+                <button class="text-white font-weight-bold border-0 smt-sm-showNavBtn">
+                    <i class="fal fa-bars"></i>
+                </button>
+                <div class="navContainer">
+                    <nav class="smt-sm-sidebar">
+                        <button class="text-white border-0 smt-sm-hideNavBtn">
+                            <i class="fal fa-times"></i>
+                        </button>
+                        <ul class="nav justify-content-end header-nav">
+                            <li class="nav-item">
+                              <a class="nav-link font-weight-bold" href="#">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link font-weight-bold" href="#">FAQs</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link font-weight-bold" href="#">Contacter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link font-weight-bold" href="#">À propos</a>
+                              </li>
+                            <li class="nav-item">
+                              <a class="nav-link font-weight-bold" href="#">Se connecter</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </div>
         <main class="mt-0 py-4 p-0">
             <div class="container-fluid my-5">
                 <div class="row justify-content-around">
@@ -72,17 +84,248 @@
             </div>
         </main>
     </div>
-    <div class="container mt-5 text-center">
+    <div class="container mt-1 mb-5 text-center">
         <div class="row justify-content-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="764.864" height="153.241" viewBox="0 0 764.864 153.241">
+            <svg xmlns="http://www.w3.org/2000/svg" class="titleband text-center" viewBox="0 0 764.864 153.241">
                 <g id="Groupe_18" data-name="Groupe 18" transform="translate(-577.568 -1157.759)">
                   <rect id="up" data-name="Rectangle 4" width="761" height="124" transform="translate(577.568 1184.317) rotate(-2)" fill="rgba(244,147,29,0.25)"/>
                   <rect id="down" data-name="Rectangle 5" width="761" height="124" transform="translate(581.896 1160.517) rotate(2)" fill="rgba(244,147,29,0.75)"/>
-                  <text id="text" data-name="svg_text" class="h1 font-weight-bold" transform="translate(613 1250)" fill="#262160" font-weight="700"><tspan x="0" y="0">Des œuvres de toutes catégories ..</tspan></text>
+                  <text id="text" data-name="svg_text" class="h1 font-weight-bold" transform="translate(680 1250)" fill="#262160" font-weight="700"><tspan x="0" y="0">Des œuvres de toutes catégories ..</tspan></text>
                 </g>
             </svg>
         </div>
+        <p class="mt-5 h5 font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+           aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+            deserunt mollit anim id est laborum.</p>
     </div>
-    <script src="{{ asset('js/app.js') }}" type="module" defer></script>
+    <div class="container mt-5 categories py-5 text-smt-tertiary">
+        <div class="row">
+            <ul class="col-md-8 border-width-3">
+                <li>
+                    <div class="mt-5">
+                        <h1 class="display font-weight-bold">Roman</h1>
+                        <p class="mt-3 font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut laboreet dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                            laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="mt-5">
+                        <h1 class="display font-weight-bold">Sciences</h1>
+                        <p class="mt-3 font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut laboreet dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                            laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="mt-5">
+                        <h1 class="display font-weight-bold">Développement personnel</h1>
+                        <p class="mt-3 font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut laboreet dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                            laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="mt-5">
+                        <h1 class="display font-weight-bold">Et plus ..</h1>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid fonctionnement py-5" style="margin: 100px auto;">
+        <div class="container">
+            <div class="row justify-content-center mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="titleband text-center" viewBox="0 0 764.864 153.241">
+                    <g id="Groupe_18" data-name="Groupe 18" transform="translate(-577.568 -1157.759)">
+                      <rect id="up" data-name="Rectangle 4" width="761" height="124" transform="translate(577.568 1184.317) rotate(-2)" fill="rgba(38,33,96,0.25)"/>
+                      <rect id="down" data-name="Rectangle 5" width="761" height="124" transform="translate(581.896 1160.517) rotate(2)" fill="rgba(38,33,96,0.75)"/>
+                      <text id="text" data-name="svg_text" class="h1 font-weight-bold" transform="translate(680 1250)" fill="#F4931D" font-weight="700"><tspan x="0" y="0">Comment fonctionne StudyUp</tspan></text>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="mt-5 mx-auto" style="width: 90%">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card border-0 bg-transparent">
+                        <div class="card-body">
+                            <div class="card-title d-inline-block">
+                                <h1 class="display-3 font-weight-bold p-0 d-inline">1.</h1>
+                                <h3 class="font-weight-bold d-inline">Création de compte</h3>
+                            </div>
+                            <p class="card-text font-weight-bold">
+                                Sed ut perspiciatis, unde omnis iste
+                                natus error sit voluptatem accusantium
+                                doloremque laudantium, totam rem aperiam
+                                eaque ipsa, quae ab illo inventore veritatis et
+                                quasi architecto beatae vitae dicta sunt.
+                                Nemo enim ipsam voluptatem, quia voluptas
+                                sit,aspernatur aut odit aut fugit
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 bg-transparent">
+                        <div class="card-body">
+                            <div class="card-title d-inline-block">
+                                <h1 class="display-3 font-weight-bold p-0 d-inline">2.</h1>
+                                <h3 class="font-weight-bold d-inline">Abonnement</h3>
+                            </div>
+                            <p class="card-text font-weight-bold">
+                                Sed ut perspiciatis, unde omnis iste
+                                natus error sit voluptatem accusantium
+                                doloremque laudantium, totam rem aperiam
+                                eaque ipsa, quae ab illo inventore veritatis et
+                                quasi architecto beatae vitae dicta sunt.
+                                Nemo enim ipsam voluptatem, quia voluptas
+                                sit,aspernatur aut odit aut fugit
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 bg-transparent">
+                        <div class="card-body">
+                            <div class="card-title d-inline-block">
+                                <h1 class="display-3 font-weight-bold p-0 d-inline">3.</h1>
+                                <h3 class="font-weight-bold  d-inline">Partenariat</h3>
+                            </div>
+                            <p class="card-text font-weight-bold">
+                                Sed ut perspiciatis, unde omnis iste
+                                natus error sit voluptatem accusantium
+                                doloremque laudantium, totam rem aperiam
+                                eaque ipsa, quae ab illo inventore veritatis et
+                                quasi architecto beatae vitae dicta sunt.
+                                Nemo enim ipsam voluptatem, quia voluptas
+                                sit,aspernatur aut odit aut fugit
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="margin-top: 100px;">
+        <div class="container mb-5">
+            <div class="row justify-content-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="titleband text-center" viewBox="0 0 764.864 153.241">
+                    <g id="Groupe_18" data-name="Groupe 18" transform="translate(-577.568 -1157.759)">
+                      <rect id="up" data-name="Rectangle 4" width="761" height="124" transform="translate(577.568 1184.317) rotate(-2)" fill="rgba(2,172,240,0.25)"/>
+                      <rect id="down" data-name="Rectangle 5" width="761" height="124" transform="translate(581.896 1160.517) rotate(2)" fill="rgba(2,172,240,0.75)"/>
+                      <text id="text" data-name="svg_text" class="h1 font-weight-bold" transform="translate(740 1250)" fill="#FFF" font-weight="700"><tspan x="0" y="0">Les avis de nos abonnés</tspan></text>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="container-fluid mx-auto" style="margin-top: 100px;">
+            <div class="row justify-content-around">
+                <div class="col-md-3 col-10 my-5">
+                    <div class="card border-0 bg-transparent">
+                        <div class="card-header border-0 py-2 d-flex justify-content-around">
+                            <div id="profileField1" class="py-2">
+                                <img src="{{asset('dist/img/student1.jpg')}}" alt="Djamila" class="w-50 rounded-circle">
+                            </div>
+                            <div class="text-center ml-5">
+                                <h2 class="font-weight-bold">Djamila</h2>
+                                <span>Etudiante en informatique</span>
+                            </div>
+                        </div>
+                        <div class="card-body py-5" style="background: #f8f8f8;">
+                            <div class="text-right h2 text-smt-fourth">
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                            <p class="card-text">
+                                Sed ut perspiciatis, unde omnis iste
+                                natus error sit voluptatem accusantium
+                                doloremque laudantium, totam rem aperiam
+                                eaque ipsa, quae ab illo inventore veritatis et
+                                quasi architecto beatae vitae dicta sunt.
+                                Nemo enim ipsam voluptatem, quia voluptas
+                                sit,aspernatur aut odit aut fugit
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-10 my-5">
+                    <div class="card border-0 bg-transparent">
+                        <div class="card-header border-0 py-2 d-flex justify-content-around">
+                            <div id="profileField2" class="py-2">
+                                <img src="{{asset('dist/img/student2.jpg')}}" alt="Abdel" class="w-50 rounded-circle">
+                            </div>
+                            <div class="text-center ml-4">
+                                <h2 class="font-weight-bold">Abdel</h2>
+                                <span>Etudiante en marketing</span>
+                            </div>
+                        </div>
+                        <div class="card-body py-5" style="background: #f8f8f8;">
+                            <div class="text-right h2 text-smt-fourth">
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                            <p class="card-text">
+                                Sed ut perspiciatis, unde omnis iste
+                                natus error sit voluptatem accusantium
+                                doloremque laudantium, totam rem aperiam
+                                eaque ipsa, quae ab illo inventore veritatis et
+                                quasi architecto beatae vitae dicta sunt.
+                                Nemo enim ipsam voluptatem, quia voluptas
+                                sit,aspernatur aut odit aut fugit
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-10 my-5">
+                    <div class="card border-0 bg-transparent">
+                        <div class="card-header border-0 py-2 d-flex justify-content-around">
+                            <div id="profileField3" class="py-2">
+                                <img src="{{asset('dist/img/student3.jpg')}}" alt="Albert" class="w-50 rounded-circle">
+                            </div>
+                            <div class="text-center ml-2">
+                                <h2 class="font-weight-bold">Albert</h2>
+                                <span>Etudiante en droit</span>
+                            </div>
+                        </div>
+                        <div class="card-body py-5" style="background: #f8f8f8;">
+                            <div class="text-right h2 text-smt-fourth">
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                            <p class="card-text">
+                                Sed ut perspiciatis, unde omnis iste
+                                natus error sit voluptatem accusantium
+                                doloremque laudantium, totam rem aperiam
+                                eaque ipsa, quae ab illo inventore veritatis et
+                                quasi architecto beatae vitae dicta sunt.
+                                Nemo enim ipsam voluptatem, quia voluptas
+                                sit,aspernatur aut odit aut fugit
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="titleband mb-3 text-center" viewBox="0 0 764.864 153.241">
+                <g id="Groupe_18" data-name="Groupe 18" transform="translate(-577.568 -1157.759)">
+                  <rect id="up" data-name="Rectangle 4" width="761" height="124" transform="translate(577.568 1184.317) rotate(-2)" fill="rgba(112,112,112,0.25)"/>
+                  <rect id="down" data-name="Rectangle 5" width="761" height="124" transform="translate(581.896 1160.517) rotate(2)" fill="rgba(112,112,112,0.75)"/>
+                  <text id="text" data-name="svg_text" class="h1 font-weight-bold" transform="translate(680 1250)" fill="#FFF" font-weight="700"><tspan x="0" y="0">Une application multiplateforme</tspan></text>
+                </g>
+            </svg>
+            <h3 class="font-weight-bold text-smt-tertiary mt-5">Vous pouvez avoir l'application installable sous Android, iOS, tablette et en version web</h3>
+        </div>
+    </div>
+    <div class="container-fluid mt-5 text-center multiplateform" style="padding-top: 150px; padding-bottom: 150px;">
+        <img src="{{asset('dist/img/footer-devices.png')}}" alt="Devices" class="w-50">
+    </div>
+    @include('layouts.footer')
+    <script src="{{ asset('js/home.js') }}" type="module" defer></script>
 </body>
 </html>

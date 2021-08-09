@@ -207,6 +207,125 @@ a[href="/eye"]:hover{color: var(--smt-fourth);}
 
 .downloadBtns .android, .downloadBtns .ios, .home_registerBtn {padding: 13px 16px;}
 
+.titleband {
+    width: 700px;
+    height: 150px;
+}
+
+.categories {
+    background: url('../dist/img/transp_book.png') no-repeat center;
+    background-size: contain;
+}
+
+.categories ul::before {
+    content: '\254';
+    height: 85%;
+    font-size: 10px;
+    color: var(--smt-tertiary);
+    background: var(--smt-tertiary);
+    position: absolute;
+    top: 11%;
+    left: -1%;
+}
+
+.categories ul li {
+    list-style: none;
+}
+
+.categories ul li::before {
+    width: fit-content;
+    height: fit-content;
+    content: '\0025CF';
+    font-size: 34px;
+    position: absolute;
+    left: -2%;
+}
+
+.fonctionnement {
+    background: #f8f8f8;
+    box-shadow: 0 3px 5px #ddd;
+}
+
+#profileField1 {background: url('../dist/img/polygone1.svg') no-repeat center;}
+#profileField2 {background: url('../dist/img/polygone2.svg') no-repeat center;}
+#profileField3 {background: url('../dist/img/polygone3.svg') no-repeat center;}
+
+#profileField1, #profileField2, #profileField3 {
+    background-size: contain;
+    position: absolute;
+    left: -25%;
+    top: -15%;
+}
+
+#profileField1 img, #profileField2 img, #profileField3 img {
+    margin-left: 45%;
+}
+
+.multiplateform {
+    background: url('../dist/img/library.jpg');
+}
+
+.smt-sm-showNavBtn {
+    font-size: 35px;
+    outline: none;
+    background: none;
+    display: none;
+}
+
+.smt-sm-hideNavBtn {
+    font-size: 35px;
+    outline: none;
+    background: none;
+    display: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+     
+}
+
 @media screen and (max-width: 1159px) {
     .smt-sm-h4 {font-size: 19px;}
+}
+
+
+@media screen and (max-width: 767px) {
+    .smt-sm-showNavBtn {display: block;}
+    .navContainer {
+        width: 100vw;
+        height: 100%;
+        background: rgba(0, 0, 0, .5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: none;
+        justify-content: flex-end;
+    }
+
+    .smt-sm-hideNavBtn {
+        display: block;
+    }
+    .smt-sm-sidebar {
+        width: 0%;
+        height: 100%;
+        background: var(--smt-primary);
+        overflow-x: hidden;
+        animation: spread .5s;
+    }
+
+    .smt-sm-sidebar ul {
+        width: fit-content;
+        height: fit-content;
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+
+    .smt-sm-sidebar ul li {margin: 10px auto;}
+
+}
+
+@keyframes spread {
+    from {width: 0%;}
+    to {width: 80%;}
 }

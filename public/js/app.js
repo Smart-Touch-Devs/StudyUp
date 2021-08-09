@@ -86,27 +86,12 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/TitleBand.js":
-/*!***********************************!*\
-  !*** ./resources/js/TitleBand.js ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'C:\\Users\\user\\Desktop\\StudyUp\\resources\\js\\TitleBand.js'");
-
-/***/ }),
-
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _TitleBand__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TitleBand */ "./resources/js/TitleBand.js");
+/*! no static exports found */
+/***/ (function(module, exports) {
 
 var inputs = Array.from(document.querySelectorAll('input'));
 inputs.forEach(function (input) {
