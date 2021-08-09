@@ -1,6 +1,6 @@
-<footer class="auth-footer text-center pt-5 pb-2">
-    <div class="container-fluid d-flex justify-content-around align-items-center mt-1">
-        <div class="little_desc col-md-3">
+<footer class="auth-footer text-center pt-5 pb-2 container-fluid">
+    <div class=" d-flex justify-content-around align-items-center mt-1 row">
+        <div class="little_desc col-md-4 col-xs-12">
             <div class="d-flex align-items-center">
                 <img src="{{ asset('dist/img/smt-logo.png') }}" alt="smarttouch_logo">
                 <div class="ml-2">
@@ -13,7 +13,7 @@
                 <a href="#" class="h2 text-smt-primary"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
-        <ul class="nav flex-column  col-md-3">
+        <ul class="nav flex-column  col-md-4 col-xs-12">
             <li class="nav-item">
               <a class="nav-link font-weight-bold" href="#">À propos</a>
             </li>
@@ -27,7 +27,7 @@
               <a class="nav-link font-weight-bold" href="#">Nous contacter</a>
             </li>
         </ul>
-        <ul class="nav flex-column col-md-3">
+        <ul class="nav flex-column col-md-4 col-xs-12">
             <li class="nav-item">
               <a class="nav-link font-weight-bold" href="#">Se connecter</a>
             </li>

@@ -38,8 +38,10 @@ class ArticlesController extends Controller
     {
         $request->validate([
             'titre' => 'required|string|',
+            'color' => 'required|string|',
             'contenu' => 'required|string|',
             'photo' => '|image|',
+            'last_article' => 'string',
         ]);
         $input = $request->all();
         if ($image = $request->file('photo')) {
@@ -87,12 +89,16 @@ class ArticlesController extends Controller
     {
         $request->validate([
             'titre' => 'required|string|',
+            'color' => 'required|string|',
             'contenu' => 'required|string|',
-            'photo' => '|image|',
+            'photo' => 'required|image|',
+
+           
         ]);
         
         $input = [];
         $input['titre'] = $request->input('titre');
+        $input['color'] = $request->input('color');
         $input['contenu'] = $request->input('contenu');
   
         if ($image = $request->file('photo')) {

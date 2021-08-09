@@ -39,21 +39,39 @@
                                 {!! $errors->first('titre', '<small class="text-danger">:message</small>') !!}
                             </div>
                             <div class="form-group">
+
+                                <label>Fond:</label>
+
+                                <div class="input-group my-colorpicker2">
+                                    <input type="color" name="color" class="form-control">
+                                    {!! $errors->first('color', '<small class="text-danger">:message</small>') !!}
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-square"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label>Contenu de l'article</label>
-                                <textarea type='text' name="contenu" id="summernote"></textarea>
+                                <textarea type='text' name="contenu" id="summernote">
+                               
                                 {!! $errors->first('contenu', '<small class="text-danger">:message</small>') !!}
                             </div>
+                            <div class="form-check form-switch col-12">
+                                <input class="form-check-input" type="checkbox" name="last_article">
+                                <label class="form-check-label font-weight-bolder" >selectionner comme derniers articles</label>
+                            </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-xs-12">
+                        <div class="col-lg-3 col-md-3 col-xs-12 my-5">
                             <div class="file-upload">
                                 <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add
                                     Image</button>
                                 <div class="image-upload-wrap">
                                     <input class="file-upload-input" type='file' name="photo" onchange="readURL(this);" accept="image/*" />
-                                    {!! $errors->first('photo', '<small class="text-danger">:message</small>') !!}
+
                                     <div class="drag-text">
                                         <h3>Ajouter une Photo</h3>
                                     </div>
+                                    {!! $errors->first('photo', '<small class="text-danger">:message</small>') !!}
                                 </div>
                                 <div class="file-upload-content">
                                     <img class="file-upload-image" src="#" alt="your image" />
@@ -96,6 +114,9 @@
                             <th style="width: 30%" class="text-center">
                                 Contenu
                             </th>
+                            <th style="width: 30%" class="text-center">
+                                Fond
+                            </th>
                             <th style="width: 20%" class="text-center">
                                 ACTIONS
                             </th>
@@ -108,11 +129,11 @@
                                 {{ $article->id }}
                             </td>
                             <td class="text-center">
-                                
-                                    {{ $article->titre }}
-                                
+
+                                {{ $article->titre }}
+
                             </td>
-                            
+
                             <td class="text-center">
                                 <ul class="list-inline">
                                     <li class="list-inline-item">
@@ -127,25 +148,31 @@
                                     </li>
                                 </ul>
                             </td>
+
+
                             <td class="text-center">
-                                
+
+
                                 {{ $article->contenu }}
-                            
-                        </td>
+
+                            </td>
+                            <td class="text-center">
+
+                                <input type="color" value="{{$article->color}}" class="form-control my-4">
+
+                            </td>
                             <td class="  d-flex justify-content-around my-4">
                                 <a href="{{ route('articles.edit',$article->id) }}">
                                     <button class="btn btn-info btn-sm " type="button">
-                                        <i class="fas fa-pencil-alt">
-                                        </i>
+
+
                                         Editer
                                     </button>
                                 </a>
                                 <form action="{{ route('articles.destroy',$article->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger btn-sm" onclick="alerte()" type="submit">
-                                        <i class="fas fa-trash">
-                                        </i>
+                                    <button class="btn btn-danger btn-sm mx-4" onclick="alerte()" type="submit">
                                         Supprimer
                                     </button>
                                     <!-- <script>
