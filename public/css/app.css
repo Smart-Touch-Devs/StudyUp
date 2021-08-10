@@ -336,6 +336,10 @@ a[href="/eye"]:hover{color: var(--smt-fourth);}
         flex: 0 0 30% !important;
         max-width: 30% !important;
     }
+
+    #profileField1, #profileField2, #profileField3 {
+        left: -35%;
+    }
 }
 
 @media screen and (max-width: 1159px) {
