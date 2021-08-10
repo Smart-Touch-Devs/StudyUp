@@ -9,8 +9,6 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
     background: #eeeeee;
     font-family: 'Source Sans Pro', sans-serif;
 }
@@ -328,7 +326,7 @@ a[href="/eye"]:hover{color: var(--smt-fourth);}
 @keyframes spread {
     from {width: 0%;}
     to {width: 80%;}
-=======
+}
 /* media queries login */
 
 /* moto g4 */
