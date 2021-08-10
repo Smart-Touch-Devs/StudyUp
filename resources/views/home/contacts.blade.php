@@ -31,7 +31,7 @@
                             <a class="h5 ml-3 font-weight-bold text-white" href="mailto:smtgroup@gmail.com">smtgroup@gmail.com</a>
                         </div>
 
-                        <div class="fit-content py-3 col-xs-12>
+                        <div class="fit-content py-3 col-xs-12">
                             <span class="h3"><i class="fab fa-facebook-messenger"></i></span>
                             <a class="h5 ml-3 font-weight-bold text-white" href="#">me.smtgroup.facebook.com</a>
                         </div>

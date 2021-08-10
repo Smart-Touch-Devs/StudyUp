@@ -14,7 +14,7 @@
           <a href="#" class="h2 text-smt-primary"><i class="fab fa-twitter"></i></a>
         </div>
       </div>
-      <ul class="nav flex-column  col-md-4 col-xs-12">
+      <ul class="nav flex-column col-md-4 col-xs-12">
         <li class="nav-item">
           <a class="nav-link font-weight-bold" href="{{asset('a_propos')}}">À propos</a>
         </li>

@@ -184,7 +184,7 @@ a[href="/eye"]:hover{color: var(--smt-fourth);}
     font-weight: 500;
 }
 
-.header-nav li:last-of-type .nav-link:hover {
+.header-nav li:last-of-type .nav-link:hover, .home_registerBtn:hover {
     transition: filter .2s, color .2s;
     color: #ddd;
     filter: brightness(.90);
@@ -192,7 +192,7 @@ a[href="/eye"]:hover{color: var(--smt-fourth);}
 }
 
 .active {color: var(--smt-secondary) !important;}
-
+.home_container > div {width: 92%;}
 .home_container {
     background: url('../dist/img/home_bg.svg') no-repeat local center;
     background-size: cover;
@@ -277,8 +277,69 @@ a[href="/eye"]:hover{color: var(--smt-fourth);}
     display: none;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1400px) {
-     
+
+@media screen and (max-width: 460px) {
+    #profileField1, #profileField2, #profileField3 {
+        left: -50%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .categories ul::before {content: '';}
+    .categories ul li::before{content: '';}
+    .categories ul li {list-style-type: disc;}
+}
+
+@media screen and (max-width: 767px) {
+    .categories ul li {list-style: none;}
+    .categories ul {margin: auto;}
+    .categories ul::before {content: '';}
+    .categories ul li::before {content: '';}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1075px) {
+    .categories ul li::before {
+        left: -2.5%;
+    }
+
+    .opinions .col-md-3 .card .card-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .col-md-3-5 {
+        -ms-flex: 0 0 30% !important;
+        flex: 0 0 30% !important;
+        max-width: 30% !important;
+    }
+
+    .opopinion_author_header {
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+    }
+
+    #profileField1, #profileField2, #profileField3 {
+        background-size: contain;
+        position: relative;
+    }
+    
+    #profileField1 img, #profileField2 img, #profileField3 img {
+        margin-left: 45%;
+    }
+}
+
+@media screen and (min-width: 1075px) and (max-width: 1440px) {
+    .col-md-3-5 {
+        -ms-flex: 0 0 30% !important;
+        flex: 0 0 30% !important;
+        max-width: 30% !important;
+    }
+
+    #profileField1, #profileField2, #profileField3 {
+        left: -35%;
+    }
 }
 
 @media screen and (max-width: 1159px) {
