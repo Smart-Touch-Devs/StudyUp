@@ -14,7 +14,8 @@ class FaqsController extends Controller
      */
     public function index()
     {
-        //
+        $faqs = Faqs::all();
+        return view('Faqs.faqs',compact('faqs'));
     }
 
     /**
@@ -35,7 +36,19 @@ class FaqsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=$request->validate([
+            'titre' => 'required|string|',
+            'contenu' => 'required|string|',
+           
+        ]);
+        Faqs::create([
+            'titre' =>$data['titre'],
+            'contenu'=>$data['contenu'],
+            
+        ]);
+        
+        
+        return redirect()->intended('Faqs')->with('success', "faq a été ajouté avec succes");
     }
 
     /**
@@ -55,9 +68,10 @@ class FaqsController extends Controller
      * @param  \App\Faqs  $faqs
      * @return \Illuminate\Http\Response
      */
-    public function edit(Faqs $faqs)
+    public function edit($id)
     {
-        //
+        $faqs = Faqs::find($id);
+        return view('faqs.edit',compact('faqs'));
     }
 
     /**
@@ -69,7 +83,15 @@ class FaqsController extends Controller
      */
     public function update(Request $request, Faqs $faqs)
     {
-        //
+        $request->validate([
+            'titre' => 'required|string|',
+            'contenu' => 'required|string|',
+        ]);        
+        $input = [];
+        $input['titre'] = $request->input('titre');
+        $input['contenu'] = $request->input('contenu');         
+        $faqs->where('id', $request->input('faqsId'))->update($input);
+        return redirect()->intended('Faqs' )->with('success', 'La modification a été effectué avec succes');
     }
 
     /**
@@ -78,8 +100,10 @@ class FaqsController extends Controller
      * @param  \App\Faqs  $faqs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Faqs $faqs)
+    public function destroy($id)
     {
-        //
+        $faqs = Faqs::find($id);
+        $faqs->delete();
+        return back()->with('success', 'Suppression reussi!');
     }
 }

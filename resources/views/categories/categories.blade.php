@@ -41,7 +41,7 @@
                     <table class="table table-striped projects">
                         <thead>
                             <tr>
-                                <th style="width: 1%">
+                                <th style="width: 1%" >
                                     N°
                                 </th>
                                 <th style="width: 20%" class="text-center">

@@ -14,7 +14,7 @@
 
         <div class="card ">
             <div class="card-header">
-                <h3 class="card-title">Ajout d'articles</h3>
+                <h3 class="card-title">Modifier l'article</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
@@ -45,8 +45,8 @@
                                 <label>Fond:</label>
 
                                 <div class="input-group my-colorpicker2">
-                                    <input type="color" name="color" class="form-control">
                                     {!! $errors->first('color', '<small class="text-danger">:message</small>') !!}
+                                    <input type="color" name="color" value="{{ $articles->color }}" class="form-control">
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fas fa-square"></i></span>
                                     </div>
@@ -58,16 +58,20 @@
                                 <textarea type='text' name="contenu" value='{{  $articles->contenu }}' id="summernote"></textarea>
                                 {!! $errors->first('contenu', '<small class="text-danger">:message</small>') !!}
                             </div>
+                            <div class="form-check form-switch col-12">
+                                <input class="form-check-input" type="checkbox" value="{{ $articles->last_article }}" name="last_article">
+                                <label class="form-check-label font-weight-bolder" >selectionner comme derniers articles</label>
+                            </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-xs-12">
+                        <div class="col-lg-3 col-md-3 col-xs-12 my-5">
                             <div class="file-upload">
-                                <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add
-                                    Image</button>
+                                <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Modifier
+                                    </button>
                                 <div class="image-upload-wrap">
                                     <input class="file-upload-input" type='file' src="{{asset('image').'/'.$articles->photo}}" name="photo" onchange="readURL(this);" accept="image/*" />
                                     {!! $errors->first('photo', '<small class="text-danger">:message</small>') !!}
                                     <div class="drag-text">
-                                        <h3>Ajouter une Photo</h3>
+                                        <h3>Modifier la photo</h3>
                                     </div>
                                 </div>
                                 <div class="file-upload-content">

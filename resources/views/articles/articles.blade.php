@@ -15,8 +15,6 @@
             <div class="card-header">
                 <h3 class="card-title">Ajout d'articles</h3>
             </div>
-            <!-- /.card-header -->
-            <!-- form start -->
             @if ($message = Session::get('success'))
             <div class="alert alert-success alert-block">
                 <button type="button" class="close ml-1" data-dismiss="alert">
@@ -52,8 +50,13 @@
                             </div>
                             <div class="form-group">
                                 <label>Contenu de l'article</label>
-                                <textarea type='text' name="contenu" id="summernote"></textarea>
+                                <textarea type='text' class="form-control" name="contenu" id="Xy"></textarea>
+                               
                                 {!! $errors->first('contenu', '<small class="text-danger">:message</small>') !!}
+                            </div>
+                            <div class="form-check form-switch col-12">
+                                <input class="form-check-input" type="checkbox" name="last_article">
+                                <label class="form-check-label font-weight-bolder" >selectionner comme derniers articles</label>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-xs-12 my-5">
@@ -168,8 +171,6 @@
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger btn-sm mx-4" onclick="alerte()" type="submit">
-
-
                                         Supprimer
                                     </button>
                                     <!-- <script>

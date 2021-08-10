@@ -33,6 +33,15 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
+                <li class="mx-3">
+                    <img src="{{asset('dist/img/avatar.jpg')}}" width="40px" height="40px" alt="">
+                </li>
+                <li class=" mt-2 mx-1">
+                    <h6 class="font-weight-bold">{{(Auth()->user()->firstname)}}</h6>
+                </li>
+                <li class="mx-3 mt-1">
+                    <a href="/deconnexion"><button type="button" class="btn btn-secondary btn-sm ">Deconnexion</button></a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-bell"></i>
@@ -70,11 +79,12 @@
                     </a>
                 </li>
             </ul>
+
         </nav>
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <a href="index3.html" class="brand-link">
-                <img src="{{ asset('dist/img/logo.png') }}" alt="Study" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">StudyUp</span>
+                <img src="{{ asset('dist/img/logo.png') }}" alt="Study" class="brand-image img-circle elevation-3" style="color:white">
+                <span class="brand-text font-weight-bolder">StudyUp</span>
             </a>
             <div class="sidebar">
                 <nav class="mt-2">
@@ -115,15 +125,21 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/boxed.html" class="nav-link">
+                                    <a href="{{ asset('countrie') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Pays</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/boxed.html" class="nav-link">
+                                    <a href="{{ asset('language') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Langues</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ asset('books') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Ajouter un livre</p>
                                     </a>
                                 </li>
                             </ul>
@@ -138,7 +154,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ asset('Faqs') }}" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     Gestion FAQs
@@ -165,11 +181,7 @@
         </main>
 
         <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-            All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.1.0
-            </div>
+        <p class="font-weight-bold text-center">&copy;Copyright - SMARTTOUCHGROUP - 2021</p>
         </footer>
         <aside class="control-sidebar control-sidebar-dark"></aside>
     </div>

@@ -7,8 +7,7 @@
     <title>StudyUp | Dashboard</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -40,7 +39,17 @@
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-
+                <li>
+                    <div>
+                        <img src="{{asset('dist/img/avatar.jpg')}}" width="40px" height="40px" alt="">
+                    </div>
+                <li class=" mt-2 mx-1">
+                    <h6 class="font-weight-bold">{{(Auth()->user()->firstname)}}</h6>
+                </li>
+                </li>
+                <li class="mx-3 mt-1">
+                    <a href="/deconnexion"><button type="button" class="btn btn-secondary btn-sm ">Deconnexion</button></a>
+                </li>
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
@@ -87,7 +96,7 @@
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
                 <img src="dist/img/logo.png" alt="Study" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">StudyUp</span>
+                <span class="brand-text font-weight-bolder">StudyUp</span>
             </a>
 
             <!-- Sidebar -->
@@ -95,8 +104,7 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
@@ -135,13 +143,13 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/boxed.html" class="nav-link">
+                                    <a href="{{ asset('countrie') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Pays</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/boxed.html" class="nav-link">
+                                    <a href="{{ asset('language') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Langues</p>
                                     </a>
@@ -158,7 +166,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ asset('Faqs') }}" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     Gestion FAQs
@@ -203,15 +211,14 @@
                             <!-- small box -->
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3>150</h3>
+                                    <h3>0{{ $books->count() }}</h3>
 
-                                    <p>New Orders</p>
+                                    <p>Livres enregistrés</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-bag"></i>
+                                    <i class="nav-icon fas fa-copy"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <a href="#" class="small-box-footer">Plus d'info <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -219,15 +226,14 @@
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+                                    <h3>0{{ $articles->count() }}</h3>
 
-                                    <p>Bounce Rate</p>
+                                    <p>Articles</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <a href="#" class="small-box-footer">Plus d'info <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -235,15 +241,14 @@
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h3>44</h3>
+                                    <h3>0{{ $users->count() }}</h3>
 
-                                    <p>User Registrations</p>
+                                    <p>Utilisateurs</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <a href="#" class="small-box-footer">Plus d'info <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -251,15 +256,14 @@
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    <h3>65</h3>
+                                    <h3>0{{ $users->count() }}</h3>
 
-                                    <p>Unique Visitors</p>
+                                    <p>Visiteurs</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-pie-graph"></i>
+                                    <i class="nav-icon fas fa-user"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <a href="#" class="small-box-footer">Plus d'info <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -272,11 +276,7 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-            All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.1.0
-            </div>
+            <p class="font-weight-bold text-center">&copy;Copyright - SMARTTOUCHGROUP - 2021</p>
         </footer>
 
         <!-- Control Sidebar -->
@@ -293,7 +293,7 @@
     <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
-    $.widget.bridge('uibutton', $.ui.button)
+        $.widget.bridge('uibutton', $.ui.button)
     </script>
     <!-- Bootstrap 4 -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

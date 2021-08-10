@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 

@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Countries;
 use Illuminate\Http\Request;
 
@@ -14,7 +13,8 @@ class CountriesController extends Controller
      */
     public function index()
     {
-        //
+        $countries = Countries::all();
+        return view('countrie.countrie', compact('countries'));
     }
 
     /**
@@ -35,10 +35,22 @@ class CountriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+        	'pays'=>['required','string'],
+            'icone' => ['image'],
+        ]);
+        $input = $request->all();
+        if ($image = $request->file('icone')) {
+            $destinationPath = 'image/';
+            $iconeImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $iconeImage);
+            $input['icone'] = "$iconeImage";
+        }
+       Countries::create($input);
+        return redirect()->intended('countrie')->with('success', 'Ajout reussi avec succes!');
     }
 
-    /**
+    /** 
      * Display the specified resource.
      *
      * @param  \App\Countries  $countries
@@ -55,10 +67,11 @@ class CountriesController extends Controller
      * @param  \App\Countries  $countries
      * @return \Illuminate\Http\Response
      */
-    public function edit(Countries $countries)
-    {
-        //
-    }
+        public function edit($id)
+        {
+            $countries = Countries::find($id);
+            return view('countrie.edit', compact('countries'));
+        }
 
     /**
      * Update the specified resource in storage.
@@ -69,7 +82,22 @@ class CountriesController extends Controller
      */
     public function update(Request $request, Countries $countries)
     {
-        //
+        $request->validate([
+            'pays' => ['required','string'],
+            'icone' => '|image|',
+        ]);
+        $input = [];
+        $input['pays'] = $request->input('pays');
+        if ($image = $request->file('icone')) {
+            $destinationPath = 'image/';
+            $iconeImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $iconeImage);
+            $input['icone'] = $iconeImage;
+        } else {
+            unset($input['icone']);
+        }
+        $countries->where('id', $request->input('countrieId'))->update($input);
+        return redirect()->intended('countrie')->with('success', 'La modification effectuée');
     }
 
     /**
@@ -78,8 +106,10 @@ class CountriesController extends Controller
      * @param  \App\Countries  $countries
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Countries $countries)
+    public function destroy($id)
     {
-        //
+        $countries = Countries::find($id);
+        $countries->delete();
+        return redirect('countrie')->with('success', 'Suppression reussi!');
     }
 }
