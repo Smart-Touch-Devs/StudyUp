@@ -11,9 +11,6 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/master', 'DashboardController@master')->name('master');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('language','LanguagesController'); 
-Route::resource('countrie','CountriesController'); 
-Route::resource('Faqs','FaqsController');
 require(__DIR__.'../../app/Http/Controllers/Auth/auth.php');
 
 
@@ -25,13 +22,13 @@ require(__DIR__.'../../app/Http/Controllers/Auth/auth.php');
 
 
 // CRUDs admin
-Route::resource('categories','CategoriesController');
-Route::resource('authors','AuthorsController');
-Route::resource('editors','EditorsController');
-Route::resource('articles','ArticlesController');
-Route::resource('language','LanguagesController'); 
-Route::resource('countrie','CountriesController'); 
-Route::resource('Faqs','FaqsController');
+Route::resource('categories','CategoriesController')->middleware("auth");
+Route::resource('authors','AuthorsController')->middleware("auth");
+Route::resource('editors','EditorsController')->middleware("auth");
+Route::resource('articles','ArticlesController')->middleware("auth");
+Route::resource('language','LanguagesController')->middleware("auth"); 
+Route::resource('countrie','CountriesController')->middleware("auth"); 
+Route::resource('Faqs','FaqsController')->middleware("auth");
 
 //Routes home
 Route::get('/', function() {
