@@ -27,13 +27,13 @@
     </div>
     @endforeach
     <div class="home_container mx-auto d-flex flex-column">
-        <div style="width: 92%;" class="mx-auto">
+        <div class="mx-auto">
             <header class="navbar navbar-light d-flex ustify-content-space-between bg-smt-primary py-2 m-0">
                 <a class="navbar-brand d-flex align-items-center" href="#">
                     <img src="{{asset('dist/img/logo.png')}}" width="50" height="50" class="d-inline-block align-top bg-light rounded-circle mr-2" alt="">
                     <span class="h3 text-white font-weight-bold">StudyUp</span>
                 </a>
-                <button class="text-white font-weight-bold border-0 smt-sm-showNavBtn">
+                <button class="text-white fit-content font-weight-bold border-0 text-center col-1 smt-sm-showNavBtn">
                     <i class="fal fa-bars"></i>
                 </button>
                 <div class="navContainer">
@@ -83,7 +83,7 @@
                                 </a>
                             </div>
                             <div class="fit-content my-5">
-                                <a href="#" class="home_registerBtn font-weight-bold">Créer un compte</a>
+                                <a href="#" class="home_registerBtn font-weight-bold text-decoration-none bg-smt-secondary text-white rounded">Créer un compte</a>
                             </div>
                         </div>
                     </div>
@@ -119,10 +119,10 @@
     </div>
     <div class="container mt-5 categories py-5 text-smt-tertiary">
         <div class="row">
-            <ul class="col-md-8 border-width-3">
+            <ul class="col-md-8 col-12 border-width-3">
                 <li>
                     <div class="mt-5">
-                        <h1 class="display font-weight-bold">Roman</h1>
+                        <h1 class="font-weight-bold">Roman</h1>
                         <p class="mt-3 font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor incididunt ut laboreet dolore magna aliqua.
                             Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -131,7 +131,7 @@
                 </li>
                 <li>
                     <div class="mt-5">
-                        <h1 class="display font-weight-bold">Sciences</h1>
+                        <h1 class="font-weight-bold">Sciences</h1>
                         <p class="mt-3 font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor incididunt ut laboreet dolore magna aliqua.
                             Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -140,7 +140,7 @@
                 </li>
                 <li>
                     <div class="mt-5">
-                        <h1 class="display font-weight-bold">Développement personnel</h1>
+                        <h1 class="font-weight-bold">Développement personnel</h1>
                         <p class="mt-3 font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor incididunt ut laboreet dolore magna aliqua.
                             Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -149,7 +149,7 @@
                 </li>
                 <li>
                     <div class="mt-5">
-                        <h1 class="display font-weight-bold">Et plus ..</h1>
+                        <h1 class="font-weight-bold">Et plus ..</h1>
                     </div>
                 </li>
             </ul>
@@ -246,14 +246,14 @@
             </div>
         </div>
         <div class="container-fluid mx-auto" style="margin-top: 100px;">
-            <div class="row justify-content-around">
-                <div class="col-md-3 col-10 my-5">
+            <div class="row justify-content-around opinions">
+                <div class="col-md-3 col-md-3-5 col-10 my-5">
                     <div class="card border-0 bg-transparent">
                         <div class="card-header border-0 py-2 d-flex justify-content-around">
                             <div id="profileField1" class="py-2">
                                 <img src="{{asset('dist/img/student1.jpg')}}" alt="Djamila" class="w-50 rounded-circle">
                             </div>
-                            <div class="text-center ml-5">
+                            <div class="text-center ml-5 opinion_author_header">
                                 <h2 class="font-weight-bold">Djamila</h2>
                                 <span>Etudiante en informatique</span>
                             </div>
@@ -274,13 +274,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-10 my-5">
+                <div class="col-md-3 col-md-3-5 col-10 my-5">
                     <div class="card border-0 bg-transparent">
                         <div class="card-header border-0 py-2 d-flex justify-content-around">
                             <div id="profileField2" class="py-2">
                                 <img src="{{asset('dist/img/student2.jpg')}}" alt="Abdel" class="w-50 rounded-circle">
                             </div>
-                            <div class="text-center ml-4">
+                            <div class="text-center ml-4 opinion_author_header">
                                 <h2 class="font-weight-bold">Abdel</h2>
                                 <span>Etudiante en marketing</span>
                             </div>
@@ -301,13 +301,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-10 my-5">
+                <div class="col-md-3 col-md-3-5 col-10 my-5">
                     <div class="card border-0 bg-transparent">
                         <div class="card-header border-0 py-2 d-flex justify-content-around">
                             <div id="profileField3" class="py-2">
                                 <img src="{{asset('dist/img/student3.jpg')}}" alt="Albert" class="w-50 rounded-circle">
                             </div>
-                            <div class="text-center ml-2">
+                            <div class="text-center ml-2 opinion_author_header">
                                 <h2 class="font-weight-bold">Albert</h2>
                                 <span>Etudiante en droit</span>
                             </div>
@@ -342,11 +342,11 @@
                     </text>
                 </g>
             </svg>
-            <h3 class="font-weight-bold text-smt-tertiary mt-5">Vous pouvez avoir l'application installable sous Android, iOS, tablette et en version web</h3>
+            <h3 class="font-weight-bold text-center text-smt-tertiary mt-5">Vous pouvez avoir l'application installable sous Android, iOS, tablette et en version web</h3>
         </div>
     </div>
     <div class="container-fluid mt-5 text-center multiplateform" style="padding-top: 150px; padding-bottom: 150px;">
-        <img src="{{asset('dist/img/footer-devices.png')}}" alt="Devices" class="w-50">
+        <img src="{{asset('dist/img/footer-devices.png')}}" alt="Devices" class="w-75">
     </div>
     @include('layouts.footer')
     <script src="{{ asset('js/home.js') }}" type="module" defer></script>
