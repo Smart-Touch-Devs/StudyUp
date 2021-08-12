@@ -14,7 +14,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('language','LanguagesController'); 
 Route::resource('countrie','CountriesController'); 
 Route::resource('Faqs','FaqsController');
-require(__DIR__.'../../app/Http/Controllers/Auth/auth.php');
 
 Auth::routes(['verify' => true]);
 Route::get('/admin', 'DashboardController@dashboard')->name('dashboard')->middleware("auth");
@@ -32,10 +31,7 @@ Route::resource('language','LanguagesController');
 Route::resource('countrie','CountriesController'); 
 Route::resource('Faqs','FaqsController');
 
-//Routes home
-// Route::get('/', function() {
-//     return view('home.welcome');
-// });
+ 
 Route::resource('/','HomesController');
 Route::get('/contacts', [ContactsController::class, 'index']);
 
