@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Homes;
+use App\Notifications;
 use Illuminate\Http\Request;
 
 class HomesController extends Controller
@@ -14,7 +15,8 @@ class HomesController extends Controller
      */
     public function index()
     {
-        //
+        $notifications = Notifications::all();
+        return view('home.welcome',compact('notifications'));
     }
 
     /**
