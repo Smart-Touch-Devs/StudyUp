@@ -10,4 +10,5 @@ showNavBtn.addEventListener('click', function() {
 hideNavBtn.addEventListener('click', function() {
     nav.style.width = "0%";
     navContainer.style.display = "none";
+    
 })

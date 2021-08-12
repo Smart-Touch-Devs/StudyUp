@@ -23,7 +23,8 @@ body {
 .bg-smt-tertiary {background: var(--smt-tertiary);}
 .bg-smt-fourth {background: var(--smt-fourth);}
 .bg-smt-tranparent-primary {background: #02adf07c !important;}
-.bg-smt-tranparent-secondary {background: #f4931d88 !important;}
+.bg-smt-tranparent-secondary {background: #f4931d7c !important;}
+.bg-smt-tranparent-tertiary {background: #2621607c !important;}
 
 .hover-text-smt-primary:hover {color: var(--smt-primary);}
 .hover-text-smt-fifth:hover {color: var(--smt-fifth);}
@@ -277,8 +278,57 @@ a[href="/eye"]:hover{color: var(--smt-fourth);}
     display: none;
 }
 
+@media screen and (max-width: 360px) {
+    .opinions .col-md-3 .card .card-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .opopinion_author_header {
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+    }
+
+    #profileField1, #profileField2, #profileField3 {
+        left: -45%;
+    }
+
+    .col-md-3-5 {
+        -ms-flex: 0 0 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+}
 
 @media screen and (max-width: 460px) {
+    .login div, .contacts div, .login button, .register button {
+        width: 290px;
+        margin: auto;
+    }
+
+    .login + div {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login + div > a {
+        width: fit-content;
+        height: fit-content;
+        margin-right: 12%;
+    }
+
+    .lp_logo {
+        width: 150px;
+        height: 160px;
+    }
+
+    .login-card {padding: 0;}
+
     #profileField1, #profileField2, #profileField3 {
         left: -50%;
     }
@@ -424,7 +474,7 @@ a[href="/eye"]:hover{color: var(--smt-fourth);}
 
 @media (max-width:414px) {
     
-     .emailVerification{
+    .emailVerification{
          display: none;
      }
   .mx-auto button{
@@ -443,22 +493,7 @@ a[href="/eye"]:hover{color: var(--smt-fourth);}
    }
  }
  
- 
-
-.c{
-    width: 300px;
-   
-}
-/* media queries login */
-
-/* moto g4 */
-
-
-
-
-
-
-
+.c{width: 300px;}
 
 .fond{
     width: 100%;
