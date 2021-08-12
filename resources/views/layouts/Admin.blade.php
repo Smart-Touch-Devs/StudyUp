@@ -154,6 +154,12 @@
                                         <p>Langues</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="{{ asset('books') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Ajouter un livre</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 
