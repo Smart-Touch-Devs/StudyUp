@@ -2,8 +2,7 @@ const inputs = Array.from(document.querySelectorAll('input'))
 inputs.forEach(input => {
     attachEvents(input)
 })
-
-const showHideBtn = document.querySelector('a[href="/eye"]');
+const showHideBtn = document.querySelector('a[href="/eye"]')
 
 showHideBtn.addEventListener('click', (e) => {
     e.preventDefault()

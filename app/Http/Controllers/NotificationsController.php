@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Notifications;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Notification;
 
 class NotificationsController extends Controller
 {
@@ -14,7 +15,8 @@ class NotificationsController extends Controller
      */
     public function index()
     {
-        //
+        $notifications = Notifications::all();
+        return view('notifications.notification',compact('notifications'));
     }
 
     /**
@@ -35,7 +37,16 @@ class NotificationsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'message' => 'required|string|',
+            'url' => 'required|string|'
+
+        ]);
+        Notifications::create([
+            'message' =>request('message'),
+            'url' =>request('url')
+        ]);
+        return redirect()->intended('notifications')->with('success',"La notification a été ajouté avec succés");
     }
 
     /**
@@ -55,9 +66,10 @@ class NotificationsController extends Controller
      * @param  \App\Notifications  $notifications
      * @return \Illuminate\Http\Response
      */
-    public function edit(Notifications $notifications)
+    public function edit($id)
     {
-        //
+        $notifications = Notifications::find($id);
+        return view('notifications.edit',compact('notifications'));
     }
 
     /**
@@ -67,9 +79,18 @@ class NotificationsController extends Controller
      * @param  \App\Notifications  $notifications
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Notifications $notifications)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'message' => 'required|string|',
+            'url' => 'required|string|',
+        ]);
+        $notifications = Notifications::find($id);
+        $notifications->message =  $request->get('message');
+        $notifications->url =  $request->get('url');
+        $notifications->save();
+
+        return redirect()->intended('notifications')->with('success', 'La modification a été effectué avec succes');
     }
 
     /**
@@ -78,8 +99,10 @@ class NotificationsController extends Controller
      * @param  \App\Notifications  $notifications
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Notifications $notifications)
+    public function destroy($id)
     {
-        //
+        $notifications = Notifications::find($id);
+        $notifications->delete();
+        return back()->with('success','La suppression à été effectué avec succés');
     }
 }
