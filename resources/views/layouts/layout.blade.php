@@ -10,15 +10,13 @@
     <title>{{ config('app.name') }}</title>
     
 
-     <link href="{{ asset('boxicons/css/boxicons.min.css')  }}"rel="stylesheet">
+    <link href="{{ asset('boxicons/css/boxicons.min.css')  }}"rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-<<<<<<< HEAD
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-=======
     <link href="{{ asset('css/introduction.css') }}" rel="stylesheet">
->>>>>>> 999ea16ba6c92a3e64906ab49dcb2aa23a9cd0a1
 </head>
 <body>
     @include('layouts.header')

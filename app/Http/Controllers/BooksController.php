@@ -45,19 +45,20 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-     $request->validate([
+        
+     $data=$request->validate([
             'titre'=>'required|string|',
-            'categorie_id' => 'required',
-            'editeur_id' => 'required',
-            'langue_id' => 'required',
+            'categorie_id' => 'string',
+            'editeur_id' => 'string',
+            'langue_id' => 'string',
             'description' => 'required|string|',
             'page' => 'required|integer|',
-            'auteur_id' => 'required',
-            'pays_id' => 'required',
+            'auteur_id' => 'string',
+            'pays_id' => 'string',
             'prix' => 'required|integer|',
             'photo' => '|image|',
         ]);
-
+dd($data);
         $input = $request->all();
         if ($image = $request->file('photo')) {
             $destinationPath = 'image/';
@@ -67,6 +68,7 @@ class BooksController extends Controller
         }
         Books::create($input);
         
+
         // $image = request('photo')->store('image','public');
                
         

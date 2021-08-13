@@ -48,7 +48,7 @@
                                         <label for="inputStatus">Categories</label>
                                         <select id="inputStatus" name="categorie_id" class="form-control custom-select">
                                             @foreach($categories as $categorie)
-                                            <option selected disabled value="{{ $categorie->id }}">{{ $categorie->categorie }}</option>
+                                                <option selected disabled value="{{ $categorie->id }}">{{ $categorie->categorie }}</option>
                                             @endforeach
                                         </select>
                                     </div>
