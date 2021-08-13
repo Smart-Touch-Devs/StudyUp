@@ -21,7 +21,7 @@
               <a class="nav-link font-weight-bold" href="#">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="#">FAQs</a>
+              <a class="nav-link font-weight-bold" href="{{asset('quest')}}">FAQs</a>
             </li>
             <li class="nav-item">
               <a class="nav-link font-weight-bold" href="#">Nous contacter</a>
@@ -38,7 +38,7 @@
               <a class="nav-link font-weight-bold" href="#">L'entreprise</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="#">Politique de confidentialité</a>
+              <a class="nav-link font-weight-bold" href="https://sites.google.com/view/smartup1/accueil">Politique de confidentialité</a>
             </li>
         </ul>
     </div>
