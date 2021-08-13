@@ -13102,6 +13102,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
   margin-top: -3px;
   max-height: 33px;
   width: auto;
+  background-color: white;
 }
 
 .brand-link .brand-image-xs {

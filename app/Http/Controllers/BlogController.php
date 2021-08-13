@@ -13,9 +13,9 @@ class BlogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $articles = Articles::find([1]);
-        return view('home.blog',compact('articles'));
+    {   $last_articles =Articles::where('last_article','on')->get();
+        $articles = Articles::where('last_article')->get();
+        return view('home.blog',compact('articles','last_articles'));
     }
 
     /**
