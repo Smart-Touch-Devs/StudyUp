@@ -19,6 +19,15 @@ require(__DIR__.'../../app/Http/Controllers/Auth/auth.php');
 
 
 // CRUDs admin
+
+Route::resource('categories','CategoriesController');
+Route::resource('authors','AuthorsController');
+Route::resource('editors','EditorsController');
+Route::resource('articles','ArticlesController');
+Route::resource('quest','QuestsController');
+
+//Routes home
+
 Route::resource('categories','CategoriesController')->middleware("auth");
 Route::resource('authors','AuthorsController')->middleware("auth");
 Route::resource('editors','EditorsController')->middleware("auth");
@@ -29,6 +38,7 @@ Route::resource('Faqs','FaqsController')->middleware("auth");
 
  
 Route::resource('/','HomesController');
+>>>>>>> 999ea16ba6c92a3e64906ab49dcb2aa23a9cd0a1
 Route::get('/contacts', [ContactsController::class, 'index']);
 
 //Routes articles/blog
