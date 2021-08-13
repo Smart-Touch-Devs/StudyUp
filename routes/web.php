@@ -11,9 +11,6 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/master', 'DashboardController@master')->name('master');
 Route::get('/home', 'HomeController@index')->name('home');
 
-require(__DIR__.'../../app/Http/Controllers/Auth/auth.php');
-
-
 Auth::routes(['verify' => true]);
 Route::get('/admin', 'DashboardController@dashboard')->name('dashboard')->middleware("auth");
 
@@ -30,10 +27,8 @@ Route::resource('language','LanguagesController')->middleware("auth");
 Route::resource('countrie','CountriesController')->middleware("auth"); 
 Route::resource('Faqs','FaqsController')->middleware("auth");
 
-//Routes home
-Route::get('/', function() {
-    return view('home.welcome');
-});
+ 
+Route::resource('/','HomesController');
 Route::get('/contacts', [ContactsController::class, 'index']);
 
 //Routes articles/blog
@@ -42,3 +37,5 @@ Route::resource('blog','BlogController');
 Route::get('a_propos','AproposController@vue');
 //Routes books
 Route::resource('books','BooksController');
+//Routes Notifications
+Route::resource('notifications','NotificationsController');

@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <title>StudyUp | Accueil</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link href="{{ asset('css/introduction.css') }}" rel="stylesheet">
 </head>
+
 <body style="background: #fff;">
+@foreach($notifications as $notification)
+    <div class="container-fluid bg-smt-tertiary">
+        <div class="row">
+            <div class="offset-2"></div>
+            <div class="col-lg-8">
+                
+                <p class="text-smt-primary text-center mx-2 my-4 font-weight-bolder">{{$notification->message}} <a href="" class="font-weight-bold text-smt-secondary"> Plus d'informations ?</a></p>
+                
+            </div>
+            <div class="offset-2"></div>
+        </div>
+    </div>
+    @endforeach
     <div class="home_container mx-auto d-flex flex-column">
         <div class="mx-auto">
             <header class="navbar navbar-light d-flex ustify-content-space-between bg-smt-primary py-2 m-0">
@@ -28,19 +43,19 @@
                         </button>
                         <ul class="nav justify-content-end header-nav">
                             <li class="nav-item">
-                              <a class="nav-link font-weight-bold" href="#">Blog</a>
+                                <a class="nav-link font-weight-bold" href="#">Blog</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link font-weight-bold" href="#">FAQs</a>
+                                <a class="nav-link font-weight-bold" href="#">FAQs</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link font-weight-bold" href="#">Contacter</a>
+                                <a class="nav-link font-weight-bold" href="#">Contacter</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link font-weight-bold" href="#">À propos</a>
-                              </li>
+                            </li>
                             <li class="nav-item">
-                              <a class="nav-link font-weight-bold" href="#">Se connecter</a>
+                                <a class="nav-link font-weight-bold" href="#">Se connecter</a>
                             </li>
                         </ul>
                     </nav>
@@ -52,7 +67,7 @@
                 <div class="row justify-content-around">
                     <div class="text col-md-5 mt-5 text-white">
                         <h1 class="display-4 font-weight-bold">Cultivez-vous de n'importe où que vous vous trouvez!</h1>
-                        <p class="h4 font-weight-bold my-5">Roman, œuvres pédagogiques,  etc. Retrouvez tout ce
+                        <p class="h4 font-weight-bold my-5">Roman, œuvres pédagogiques, etc. Retrouvez tout ce
                             dont vous avez besoin de lire sur notre plateforme.
                             Téléchargez notre application mobile ou créer un
                             compte en ligne :</p>
@@ -88,15 +103,17 @@
         <div class="row justify-content-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="titleband text-center" viewBox="0 0 764.864 153.241">
                 <g id="Groupe_18" data-name="Groupe 18" transform="translate(-577.568 -1157.759)">
-                  <rect id="up" data-name="Rectangle 4" width="761" height="124" transform="translate(577.568 1184.317) rotate(-2)" fill="rgba(244,147,29,0.25)"/>
-                  <rect id="down" data-name="Rectangle 5" width="761" height="124" transform="translate(581.896 1160.517) rotate(2)" fill="rgba(244,147,29,0.75)"/>
-                  <text id="text" data-name="svg_text" class="h1 font-weight-bold" transform="translate(680 1250)" fill="#262160" font-weight="700"><tspan x="0" y="0">Des œuvres de toutes catégories ..</tspan></text>
+                    <rect id="up" data-name="Rectangle 4" width="761" height="124" transform="translate(577.568 1184.317) rotate(-2)" fill="rgba(244,147,29,0.25)" />
+                    <rect id="down" data-name="Rectangle 5" width="761" height="124" transform="translate(581.896 1160.517) rotate(2)" fill="rgba(244,147,29,0.75)" />
+                    <text id="text" data-name="svg_text" class="h1 font-weight-bold" transform="translate(680 1250)" fill="#262160" font-weight="700">
+                        <tspan x="0" y="0">Des œuvres de toutes catégories ..</tspan>
+                    </text>
                 </g>
             </svg>
         </div>
         <p class="mt-5 h5 font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-           aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
             dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
             deserunt mollit anim id est laborum.</p>
     </div>
@@ -108,7 +125,7 @@
                         <h1 class="font-weight-bold">Roman</h1>
                         <p class="mt-3 font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor incididunt ut laboreet dolore magna aliqua.
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco
                             laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                 </li>
@@ -117,7 +134,7 @@
                         <h1 class="font-weight-bold">Sciences</h1>
                         <p class="mt-3 font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor incididunt ut laboreet dolore magna aliqua.
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco
                             laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                 </li>
@@ -126,7 +143,7 @@
                         <h1 class="font-weight-bold">Développement personnel</h1>
                         <p class="mt-3 font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor incididunt ut laboreet dolore magna aliqua.
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco
                             laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                 </li>
@@ -143,9 +160,11 @@
             <div class="row justify-content-center mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="titleband text-center" viewBox="0 0 764.864 153.241">
                     <g id="Groupe_18" data-name="Groupe 18" transform="translate(-577.568 -1157.759)">
-                      <rect id="up" data-name="Rectangle 4" width="761" height="124" transform="translate(577.568 1184.317) rotate(-2)" fill="rgba(38,33,96,0.25)"/>
-                      <rect id="down" data-name="Rectangle 5" width="761" height="124" transform="translate(581.896 1160.517) rotate(2)" fill="rgba(38,33,96,0.75)"/>
-                      <text id="text" data-name="svg_text" class="h1 font-weight-bold" transform="translate(680 1250)" fill="#F4931D" font-weight="700"><tspan x="0" y="0">Comment fonctionne StudyUp</tspan></text>
+                        <rect id="up" data-name="Rectangle 4" width="761" height="124" transform="translate(577.568 1184.317) rotate(-2)" fill="rgba(38,33,96,0.25)" />
+                        <rect id="down" data-name="Rectangle 5" width="761" height="124" transform="translate(581.896 1160.517) rotate(2)" fill="rgba(38,33,96,0.75)" />
+                        <text id="text" data-name="svg_text" class="h1 font-weight-bold" transform="translate(680 1250)" fill="#F4931D" font-weight="700">
+                            <tspan x="0" y="0">Comment fonctionne StudyUp</tspan>
+                        </text>
                     </g>
                 </svg>
             </div>
@@ -217,9 +236,11 @@
             <div class="row justify-content-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="titleband text-center" viewBox="0 0 764.864 153.241">
                     <g id="Groupe_18" data-name="Groupe 18" transform="translate(-577.568 -1157.759)">
-                      <rect id="up" data-name="Rectangle 4" width="761" height="124" transform="translate(577.568 1184.317) rotate(-2)" fill="rgba(2,172,240,0.25)"/>
-                      <rect id="down" data-name="Rectangle 5" width="761" height="124" transform="translate(581.896 1160.517) rotate(2)" fill="rgba(2,172,240,0.75)"/>
-                      <text id="text" data-name="svg_text" class="h1 font-weight-bold" transform="translate(740 1250)" fill="#FFF" font-weight="700"><tspan x="0" y="0">Les avis de nos abonnés</tspan></text>
+                        <rect id="up" data-name="Rectangle 4" width="761" height="124" transform="translate(577.568 1184.317) rotate(-2)" fill="rgba(2,172,240,0.25)" />
+                        <rect id="down" data-name="Rectangle 5" width="761" height="124" transform="translate(581.896 1160.517) rotate(2)" fill="rgba(2,172,240,0.75)" />
+                        <text id="text" data-name="svg_text" class="h1 font-weight-bold" transform="translate(740 1250)" fill="#FFF" font-weight="700">
+                            <tspan x="0" y="0">Les avis de nos abonnés</tspan>
+                        </text>
                     </g>
                 </svg>
             </div>
@@ -314,9 +335,11 @@
         <div class="row justify-content-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="titleband mb-3 text-center" viewBox="0 0 764.864 153.241">
                 <g id="Groupe_18" data-name="Groupe 18" transform="translate(-577.568 -1157.759)">
-                  <rect id="up" data-name="Rectangle 4" width="761" height="124" transform="translate(577.568 1184.317) rotate(-2)" fill="rgba(112,112,112,0.25)"/>
-                  <rect id="down" data-name="Rectangle 5" width="761" height="124" transform="translate(581.896 1160.517) rotate(2)" fill="rgba(112,112,112,0.75)"/>
-                  <text id="text" data-name="svg_text" class="h1 font-weight-bold" transform="translate(680 1250)" fill="#FFF" font-weight="700"><tspan x="0" y="0">Une application multiplateforme</tspan></text>
+                    <rect id="up" data-name="Rectangle 4" width="761" height="124" transform="translate(577.568 1184.317) rotate(-2)" fill="rgba(112,112,112,0.25)" />
+                    <rect id="down" data-name="Rectangle 5" width="761" height="124" transform="translate(581.896 1160.517) rotate(2)" fill="rgba(112,112,112,0.75)" />
+                    <text id="text" data-name="svg_text" class="h1 font-weight-bold" transform="translate(680 1250)" fill="#FFF" font-weight="700">
+                        <tspan x="0" y="0">Une application multiplateforme</tspan>
+                    </text>
                 </g>
             </svg>
             <h3 class="font-weight-bold text-center text-smt-tertiary mt-5">Vous pouvez avoir l'application installable sous Android, iOS, tablette et en version web</h3>
@@ -328,4 +351,5 @@
     @include('layouts.footer')
     <script src="{{ asset('js/home.js') }}" type="module" defer></script>
 </body>
+
 </html>
