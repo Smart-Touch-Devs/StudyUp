@@ -1,7 +1,7 @@
 <footer class="auth-footer text-center pt-5 pb-2 container-fluid">
     <div class="container">
         <div class=" d-flex justify-content-around align-items-center mt-1 row">
-           
+
             <div class="mt-5">
                 <p class="font-weight-bold">&copy;Copyright - SMARTTOUCHGROUP - 2021</p>
                 <p class="text-muted text-justify mt-2 font-size-14">Smart Touch Group est une une entreprise de droit
@@ -20,7 +20,7 @@
                     <a class="nav-link font-weight-bold" href="{{asset('blog')}}">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link font-weight-bold" href="{{asset('Faqs')}}">FAQs</a>
+                    <a class="nav-link font-weight-bold" href="{{asset('quest')}}">FAQs</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link font-weight-bold" href="{{asset('contacts')}}">Nous contacter</a>
@@ -37,7 +37,8 @@
                     <a class="nav-link font-weight-bold" href="https://smt-group.net/">L'entreprise</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link font-weight-bold" href="https://sites.google.com/view/smartup1/accueil">Politique de confidentialité</a>
+                    <a class="nav-link font-weight-bold" href="https://sites.google.com/view/smartup1/accueil">Politique
+                        de confidentialité</a>
                 </li>
             </ul>
         </div>
