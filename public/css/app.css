@@ -31,6 +31,7 @@ body {
 .hover-text-smt-primary:hover {color: var(--smt-primary);}
 .hover-text-smt-fifth:hover {color: var(--smt-fifth);}
 .hover-text-smt-tertiary:hover {color: var(--smt-tertiary);}
+.hover-bg-smt-secondary:hover {filter: brightness(.75);}
 
 .border-smt-fourth {border: .5px solid var(--smt-fourth);}
 

@@ -39,3 +39,4 @@ Route::resource('books','BooksController');
 //Routes Notifications
 Route::resource('notifications','NotificationsController');
 Route::get('/app', [AppController::class, 'index']);
+Route::get('/app/show', [AppController::class, 'show']);
