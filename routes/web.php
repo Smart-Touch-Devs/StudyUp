@@ -1,8 +1,7 @@
 <?php
 
+use App\Http\Controllers\AppController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\LanguagesController;
 use App\Http\Controllers\ContactsController;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,7 +24,7 @@ Route::resource('editors','EditorsController')->middleware("auth");
 Route::resource('articles','ArticlesController')->middleware("auth");
 Route::resource('language','LanguagesController')->middleware("auth"); 
 Route::resource('countrie','CountriesController')->middleware("auth"); 
-Route::resource('Faqs','FaqsController')->middleware("auth");
+Route::resource('Faqs','FaqsController');
 
  
 Route::resource('/','HomesController');
@@ -39,3 +38,4 @@ Route::get('a_propos','AproposController@vue');
 Route::resource('books','BooksController');
 //Routes Notifications
 Route::resource('notifications','NotificationsController');
+Route::get('/app', [AppController::class, 'index']);
