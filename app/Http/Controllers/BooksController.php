@@ -67,24 +67,24 @@ class BooksController extends Controller
         }
         Books::create($input);
         
-        // $image = request('photo')->store('image','public');
+        $image = request('photo')->store('image','public');
                
         
-        // Books::create([
-        //     'titre'=>request('titre'),
-        //     'categorie_id'=>request('categorie_id'),
-        //     'editeur_id'=>request('editeur_id'),
-        //     'langue_id'=>request('langue_id'),
-        //     'description'=>request('description'),
-        //     'page'=>request('page'),
-        //     'auteur_id'=>request('auteur_id'),
-        //     'pays_id'=>request('pays_id'),
-        //     'prix'=>request('prix'),
-        //     'meuble'=>request('meuble'),
-        //     'photo'=>request('photo'),
-        //     'photo'=>$image,
+        Books::create([
+            'titre'=>request('titre'),
+            'categorie_id'=>request('categorie_id'),
+            'editeur_id'=>request('editeur_id'),
+            'langue_id'=>request('langue_id'),
+            'description'=>request('description'),
+            'page'=>request('page'),
+            'auteur_id'=>request('auteur_id'),
+            'pays_id'=>request('pays_id'),
+            'prix'=>request('prix'),
+            'meuble'=>request('meuble'),
+            'photo'=>request('photo'),
+            'photo'=>$image,
     
-       // ]);
+       ]);
         return redirect()->intended('books')->with('success', "L'article a été ajouté avec succes");
     }
 

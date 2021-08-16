@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Valider</button>
+                    <button type="submit" class="btn btn-primary">Publier</button>
                 </div>
             </form>
         </div>
@@ -127,11 +127,8 @@
                                 {{ $article->id }}
                             </td>
                             <td class="text-center">
-
                                 {{ $article->titre }}
-
                             </td>
-
                             <td class="text-center">
                                 <ul class="list-inline">
                                     <li class="list-inline-item">
@@ -146,24 +143,15 @@
                                     </li>
                                 </ul>
                             </td>
-
-
                             <td class="text-center">
-
-
                                 {{ $article->contenu }}
-
                             </td>
                             <td class="text-center">
-
                                 <input type="color" value="{{$article->color}}" class="form-control my-4">
-
                             </td>
                             <td class="  d-flex justify-content-around my-4">
                                 <a href="{{ route('articles.edit',$article->id) }}">
                                     <button class="btn btn-info btn-sm " type="button">
-
-
                                         Editer
                                     </button>
                                 </a>

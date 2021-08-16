@@ -109,18 +109,17 @@
                with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
                         <li class="nav-item">
-                            <a href="./index.html" class="nav-link active">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <a href="#" class="nav-link active">
+                                <i class="fa fa-book" aria-hidden="true"></i>
                                 <p>Gestion de bibliothèque</p>
                             </a>
                         </li>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
+                                <i class="fa fa-tasks" aria-hidden="true"></i>
                                 <p>
                                     Paramétrage Livres
-                                    <i class="fas fa-angle-right right"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -165,7 +164,7 @@
 
                         <li class="nav-item">
                             <a href="{{ asset('articles') }}" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
+                                <i class="fa fa-address-card" aria-hidden="true"></i>
                                 <p>
                                     Gestion Articles
                                 </p>
@@ -173,7 +172,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ asset('Faqs') }}" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
+                                <i class="fa fa-question-circle" aria-hidden="true"></i>
                                 <p>
                                     Gestion FAQs
                                 </p>
@@ -181,7 +180,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
                                 <p>
                                     Gestion Notifications
                                 </p>
@@ -282,7 +281,7 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <p class="font-weight-bold text-center">&copy;Copyright - SMARTTOUCHGROUP - 2021</p>
+            <p class="font-weight-bold text-center">&copy;Copyright - SMART TOUCH GROUP - 2021</p>
         </footer>
 
         <!-- Control Sidebar -->

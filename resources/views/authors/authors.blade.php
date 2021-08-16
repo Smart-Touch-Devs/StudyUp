@@ -25,8 +25,6 @@
                 <strong>{{ $message }}</strong>
             </div>
             @endif
-
-            <!-- Default box -->
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title font-weight-bold text-uppercase">Auteurs</h3>

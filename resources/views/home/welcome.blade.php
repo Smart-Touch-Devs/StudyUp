@@ -11,16 +11,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link href="{{ asset('css/introduction.css') }}" rel="stylesheet">
 </head>
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
 
 <body style="background: #fff;">
-@foreach($notifications as $notification)
+    @foreach($notifications as $notification)
     <div class="container-fluid bg-smt-tertiary">
         <div class="row">
             <div class="offset-2"></div>
             <div class="col-lg-8">
-                
                 <p class="text-smt-primary text-center mx-2 my-4 font-weight-bolder">{{$notification->message}} <a href="" class="font-weight-bold text-smt-secondary"> Plus d'informations ?</a></p>
-                
             </div>
             <div class="offset-2"></div>
         </div>
@@ -43,19 +46,19 @@
                         </button>
                         <ul class="nav justify-content-end header-nav">
                             <li class="nav-item">
-                                <a class="nav-link font-weight-bold" href="#">Blog</a>
+                                <a class="nav-link font-weight-bold" href="{{ asset('blog') }}">Blog</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link font-weight-bold" href="#">FAQs</a>
+                                <a class="nav-link font-weight-bold" href="">FAQs</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link font-weight-bold" href="#">Contacter</a>
+                                <a class="nav-link font-weight-bold" href="{{ asset('contacts') }}">Contacter</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link font-weight-bold" href="#">À propos</a>
+                                <a class="nav-link font-weight-bold" href="{{ asset('a_propos') }}">À propos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link font-weight-bold" href="#">Se connecter</a>
+                                <a class="nav-link font-weight-bold" href="{{ asset('login') }}">Se connecter</a>
                             </li>
                         </ul>
                     </nav>
@@ -83,7 +86,7 @@
                                 </a>
                             </div>
                             <div class="fit-content my-5">
-                                <a href="#" class="home_registerBtn font-weight-bold text-decoration-none bg-smt-secondary text-white rounded">Créer un compte</a>
+                                <a href="{{ asset('login') }}" class="home_registerBtn font-weight-bold text-decoration-none bg-smt-secondary text-white rounded">Créer un compte</a>
                             </div>
                         </div>
                     </div>
@@ -91,15 +94,18 @@
                         <img src="{{asset('dist/img/student.png')}}" alt="Black student">
                     </div>
                 </div>
-                <div class="text-center my-5">
+                <div class="text-center my-5" id="section1">
                     <button class="bg-transparent border-0 outline-0 display-4 text-white-50">
-                        <i class="fal fa-angle-down"></i>
+                        <a href="#section2"><i class="fal fa-angle-down text-white"></i></a>
                     </button>
                 </div>
             </div>
         </main>
     </div>
     <div class="container mt-1 mb-5 text-center">
+        <div class="main" id="section2">
+            <a href="#section1"></a>
+        </div>
         <div class="row justify-content-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="titleband text-center" viewBox="0 0 764.864 153.241">
                 <g id="Groupe_18" data-name="Groupe 18" transform="translate(-577.568 -1157.759)">
@@ -139,7 +145,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="mt-5">
+                    <div class="mt-5" id="section2">
                         <h1 class="font-weight-bold">Développement personnel</h1>
                         <p class="mt-3 font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor incididunt ut laboreet dolore magna aliqua.

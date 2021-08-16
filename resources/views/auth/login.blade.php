@@ -29,6 +29,7 @@
                 <input type="password" name="password" placeholder="Mot de passe" required class="login_password border-0 text-indent-3">
                 <!-- <a href="" class="input-group-text text-decoration-none border-0"><i class="far fa-eye-slash"></i></a> -->
             </div>
+           
             <button type="submit" class="border-0 p-1 font-weight-bold mx-auto word-space-1">Se connecter</button>
             <div class="my-4">
                 <a href="{{ route('password.email4reset') }}">Mot de passe oublié?</a>

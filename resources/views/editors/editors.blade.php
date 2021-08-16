@@ -139,6 +139,7 @@
                                     {!! $errors->first('nom', '<small class="text-danger">:message</small>') !!}
                                 </div>
                                 <div class="form-group">
+                                    <label>Icone:</label>
                                     <input type="file" name="icone" class="form-control-file" id="exampleFormControlFile1">
                                 </div>
                                 <div class="modal-footer">

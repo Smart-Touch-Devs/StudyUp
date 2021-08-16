@@ -1,6 +1,5 @@
 @extends('layouts.master')
 @section('contenu')
-
 <div class="content-wrapper">
     <div class="content-header">
         <div class="container-fluid">
@@ -29,7 +28,6 @@
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title font-weight-bold text-uppercase">Catégories</h3>
-
                     <div class="card-tools d-flex justify-content-between">
                         <button type="button" class="btn btn-block btn-outline-success btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Ajouter une catégorie</button>
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -139,6 +137,7 @@
                                     {!! $errors->first('categorie', '<small class="text-danger">:message</small>') !!}
                                 </div>
                                 <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Icone:</label>
                                     <input type="file" name="icone" class="form-control-file" id="exampleFormControlFile1">
                                 </div>
                                 <div class="modal-footer">
@@ -149,7 +148,6 @@
                     </div>
                 </div>
             </div>
-
         </section>
     </div>
 </div>
