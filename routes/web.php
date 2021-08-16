@@ -1,8 +1,7 @@
 <?php
 
+use App\Http\Controllers\AppController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\LanguagesController;
 use App\Http\Controllers\ContactsController;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,6 +27,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('quest', 'QuestsController');
 });
 Route::resource('/', 'HomesController');
+
 Route::get('/contacts', [ContactsController::class, 'index']);
 //Routes articles/blog
 Route::resource('blog', 'BlogController');
@@ -36,4 +36,7 @@ Route::get('a_propos', 'AproposController@vue');
 //Routes books
 Route::resource('books', 'BooksController');
 //Routes Notifications
+
+Route::resource('notifications','NotificationsController');
+Route::get('/app', [AppController::class, 'index']);
 Route::resource('notifications', 'NotificationsController');
