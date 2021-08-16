@@ -21,23 +21,23 @@
                                     <input id="lastname" type="text" class="text-indent-3 @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" placeholder="Ex: Da, Guira ...">
                                 </div>
                                 @error('lastname')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="firstname" class="col-md-4 col-form-label text-md-right font-weight-bold">Prenom :</label>
+                            <label for="firstname" class="col-md-4 col-form-label text-md-right font-weight-bold">Prénom(s) :</label>
                             <div class="col-md-6">
                                 <div class="border rounded text-center">
-                                    <input id="firstname" type="text" class="text-indent-3 @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required autocomplete="name" placeholder="Ex: Aziz, ALbert ...">
+                                    <input id="firstname" type="text" class="text-indent-3 @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required autocomplete="name" placeholder="Ex: Aziz, Albert ...">
                                 </div>
                                 @error('firstname')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -51,9 +51,9 @@
                                 </div>
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -77,9 +77,9 @@
                                 </div>
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -93,7 +93,17 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="row">
+                            <div class="offset-2"></div>
+                            <div class="col-lg-8">
+                                <div class="my-2">
+                                    <p class="text-center reduction-size font-weight-bold m-0">
+                                        En cliquant ci-dessous , vous acceptez les <a href="" class="text-smt-secondary">conditions de services</a> et la <a href="" class="text-smt-secondary">Politique de confidentialité</a> de StudyUp.
+                                    </p>
+                                </div>
+                                <div class="offset-2"></div>
+                            </div>
+                        </div>
                         <div class="fit-content mx-auto py-3">
                             <button type="submit" class="border-0 p-1 font-weight-bold word-space-1">S'inscrire</button>
                         </div>
