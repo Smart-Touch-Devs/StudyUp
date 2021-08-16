@@ -151,7 +151,7 @@ a[href="/eye"]:hover{color: var(--smt-fourth);}
 
 .little_desc > div:first-of-type img {
     width: 50px;
-    height: 50px;
+    height: 60px;
 }
 
 .little_logo {
@@ -529,4 +529,9 @@ a[href="/eye"]:hover{color: var(--smt-fourth);}
 }
 .top{
     margin-top: 75px;
+}
+
+/* reduction de la taille des mots sur le login */
+.reduction-size{
+    font-size: smaller;
 }

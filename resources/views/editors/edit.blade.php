@@ -22,8 +22,8 @@
                     {!! $errors->first('nom', '<small class="text-danger">:message</small>') !!}
                 </div>
                 <div class="form-group">
+                <label>Icone:</label>
                     <input type="file" value="{{ $editeurs->icone }}" class="form-control-file" name="icone" id="exampleFormControlFile1">
-                    
                     <style>
                         .cercle {
                             width: 75px;

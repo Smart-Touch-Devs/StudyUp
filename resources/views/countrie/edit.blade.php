@@ -22,8 +22,8 @@
                     {!! $errors->first('countrie', '<small class="text-danger">:message</small>') !!}
                 </div>
                 <div class="form-group">
-                    <input type="file" value="{{ $countries->icone }}" class="form-control-file" name="icone"
-                        id="exampleFormControlFile1">
+                    <label>Icone:</label>
+                    <input type="file" value="{{ $countries->icone }}" class="form-control-file" name="icone" id="exampleFormControlFile1">
                 </div>
                 <button type="submit" class="btn btn-primary">Modifier</button>
             </form>
