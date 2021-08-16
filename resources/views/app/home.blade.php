@@ -402,8 +402,12 @@
                     <a href="#" class="fit-content mx-auto px-5 py-2 bg-smt-primary text-decoration-none rounded text-white font-weight-bold">Voir le livre</a>
                 </div>
             </div>
-            <div class="fit-content my-5 ml-2 font-weight-bold">
+            <div class="fit-content mt-5 mb-3 ml-2 font-weight-bold">
                 <a href="#"><span class="mr-2">Voir tous les livres sur les sciences</span><i class="far fa-long-arrow-right"></i></a>
+            </div>
+            <hr>
+            <div class="fit-content my-5 ml-2 font-weight-bold">
+                <a href="#"><span class="mr-2">Voir toutes les catégories</span><i class="far fa-long-arrow-right"></i></a>
             </div>
 
         </div>
