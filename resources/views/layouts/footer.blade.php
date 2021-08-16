@@ -8,7 +8,9 @@
             <span class="h4 font-weight-bold text-smt-tertiary smt-sm-h4">Smart Touch Group</span>
           </div>
         </div>
-        <p class="text-muted text-justify mt-2 font-size-14">Smart Touch Group est une une entreprise de droit burkinabé de technologie avancée proposant des services innovants, futuristes, intelligents à ses clients.</p>
+    </div>
+    <div class="mt-5">
+        <p class="text-muted text-justify mt-2 font-size-14">Smart Touch Group est une entreprise de droit burkinabé de technologie avancée proposant des services innovants, futuristes, intelligents à ses client.</p>
         <div class="text-left">
           <a href="#" class="h2 mr-4"><i class="fab fa-facebook"></i></a>
           <a href="#" class="h2 text-smt-primary"><i class="fab fa-twitter"></i></a>
@@ -22,7 +24,7 @@
           <a class="nav-link font-weight-bold" href="{{asset('blog')}}">Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link font-weight-bold" href="{{asset('Faqs')}}">FAQs</a>
+        <a class="nav-link font-weight-bold" href="{{asset('quest')}}">FAQs</a>
         </li>
         <li class="nav-item">
           <a class="nav-link font-weight-bold" href="{{asset('contacts')}}">Nous contacter</a>
@@ -39,7 +41,7 @@
           <a class="nav-link font-weight-bold" href="https://smt-group.net/">L'entreprise</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link font-weight-bold" href="#">Politique de confidentialité</a>
+        <a class="nav-link font-weight-bold" href="https://sites.google.com/view/smartup1/accueil">Politique de confidentialité</a>
         </li>
       </ul>
     </div>

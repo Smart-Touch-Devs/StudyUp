@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/master', 'DashboardController@master')->name('master');
 Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes(['verify' => true]);
+
 require(__DIR__ . '../../app/Http/Controllers/Auth/auth.php');
 
 Route::group(['middleware' => ['auth']], function () {
@@ -24,6 +25,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('language', 'LanguagesController');
     Route::resource('countrie', 'CountriesController');
     Route::resource('Faqs', 'FaqsController');
+    Route::resource('quest', 'QuestsController');
 });
 Route::resource('/', 'HomesController');
 Route::get('/contacts', [ContactsController::class, 'index']);
