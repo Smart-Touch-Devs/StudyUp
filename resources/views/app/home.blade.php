@@ -249,94 +249,161 @@
     </div>
 
     <div class="container-fluid my-5">
-        <div class="col-md-10 mx-auto">
+        <div class="col-md-9 mx-auto">
             <h2 class="font-weight-bold my-5">Les livres sur le développement personnel</h2>
-            
-            <div class="books_carousel_container d-flex align-items-center">
-                <button class="previous fit-content border-0">
-                    <i class="fal fa-arrow-circle-left"></i>
-                </button>
-                
-                <div class="carousel_row">
-                    <div class="row books_row">
-                        <div class="card p-1">
-                            <div class="book_img rounded-top text-center">
-                                <img src="{{asset('image/a_c.jpg')}}" alt="Agatha_Christie">
-                            </div>
-                            <div class="card-body d-flex justify-content-between align-items-center">
-                                <div class="fit-content rate">
-                                    <img src="{{asset('dist/img/star.svg')}}" alt="star">
-                                    <img src="{{asset('dist/img/star.svg')}}" alt="star">
-                                    <img src="{{asset('dist/img/star.svg')}}" alt="star">
-                                    <img src="{{asset('dist/img/star_half.svg')}}" alt="star">
-                                </div>
-                                <div class="fit-content">
-                                    <span class="text-smt-sixth">Gratuit</span>
-                                </div>
-                            </div>
-                            <a href="#" class="fit-content mx-auto px-5 py-2 bg-smt-primary text-decoration-none rounded text-white font-weight-bold">Voir le livre</a>
-                        </div>
-    
-                        <div class="card p-1">
-                            <div class="book_img rounded-top text-center">
-                                <img src="{{asset('image/a_c.jpg')}}" alt="Agatha_Christie">
-                            </div>
-                            <div class="card-body d-flex justify-content-between align-items-center">
-                                <div class="fit-content rate">
-                                    <img src="{{asset('dist/img/star.svg')}}" alt="star">
-                                    <img src="{{asset('dist/img/star.svg')}}" alt="star">
-                                    <img src="{{asset('dist/img/star.svg')}}" alt="star">
-                                    <img src="{{asset('dist/img/star_half.svg')}}" alt="star">
-                                </div>
-                                <div class="fit-content">
-                                    <span class="text-smt-sixth">Gratuit</span>
-                                </div>
-                            </div>
-                            <a href="#" class="fit-content mx-auto px-5 py-2 bg-smt-primary text-decoration-none rounded text-white font-weight-bold">Voir le livre</a>
-                        </div>
-    
-                        <div class="card p-1">
-                            <div class="book_img rounded-top text-center">
-                                <img src="{{asset('image/a_c.jpg')}}" alt="Agatha_Christie">
-                            </div>
-                            <div class="card-body d-flex justify-content-between align-items-center">
-                                <div class="fit-content rate">
-                                    <img src="{{asset('dist/img/star.svg')}}" alt="star">
-                                    <img src="{{asset('dist/img/star.svg')}}" alt="star">
-                                    <img src="{{asset('dist/img/star.svg')}}" alt="star">
-                                    <img src="{{asset('dist/img/star_half.svg')}}" alt="star">
-                                </div>
-                                <div class="fit-content">
-                                    <span class="text-smt-sixth">Gratuit</span>
-                                </div>
-                            </div>
-                            <a href="#" class="fit-content mx-auto px-5 py-2 bg-smt-primary text-decoration-none rounded text-white font-weight-bold">Voir le livre</a>
-                        </div>
-    
-                        <div class="card p-1">
-                            <div class="book_img rounded-top text-center">
-                                <img src="{{asset('image/a_c.jpg')}}" alt="Agatha_Christie">
-                            </div>
-                            <div class="card-body d-flex justify-content-between align-items-center">
-                                <div class="fit-content rate">
-                                    <img src="{{asset('dist/img/star.svg')}}" alt="star">
-                                    <img src="{{asset('dist/img/star.svg')}}" alt="star">
-                                    <img src="{{asset('dist/img/star.svg')}}" alt="star">
-                                    <img src="{{asset('dist/img/star_half.svg')}}" alt="star">
-                                </div>
-                                <div class="fit-content">
-                                    <span class="text-smt-sixth">Gratuit</span>
-                                </div>
-                            </div>
-                            <a href="#" class="fit-content mx-auto px-5 py-2 bg-smt-primary text-decoration-none rounded text-white font-weight-bold">Voir le livre</a>
-                        </div>
-                        
+            <div class="row books_row">
+                <div class="card p-1">
+                    <div class="book_img rounded-top text-center">
+                        <img src="{{asset('image/a_c.jpg')}}" alt="Agatha_Christie">
                     </div>
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div class="fit-content rate">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star_half.svg')}}" alt="star">
+                        </div>
+                        <div class="fit-content">
+                            <span class="text-smt-sixth">Gratuit</span>
+                        </div>
+                    </div>
+                    <a href="#" class="fit-content mx-auto px-5 py-2 bg-smt-primary text-decoration-none rounded text-white font-weight-bold">Voir le livre</a>
                 </div>
 
-                <button class="next fit-content border-0">
-                    <i class="fal fa-arrow-circle-right"></i>
-                </button>
+                <div class="card p-1">
+                    <div class="book_img rounded-top text-center">
+                        <img src="{{asset('image/a_c.jpg')}}" alt="Agatha_Christie">
+                    </div>
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div class="fit-content rate">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star_half.svg')}}" alt="star">
+                        </div>
+                        <div class="fit-content">
+                            <span class="text-smt-sixth">Gratuit</span>
+                        </div>
+                    </div>
+                    <a href="#" class="fit-content mx-auto px-5 py-2 bg-smt-primary text-decoration-none rounded text-white font-weight-bold">Voir le livre</a>
+                </div>
+
+                <div class="card p-1">
+                    <div class="book_img rounded-top text-center">
+                        <img src="{{asset('image/a_c.jpg')}}" alt="Agatha_Christie">
+                    </div>
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div class="fit-content rate">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star_half.svg')}}" alt="star">
+                        </div>
+                        <div class="fit-content">
+                            <span class="text-smt-sixth">Gratuit</span>
+                        </div>
+                    </div>
+                    <a href="#" class="fit-content mx-auto px-5 py-2 bg-smt-primary text-decoration-none rounded text-white font-weight-bold">Voir le livre</a>
+                </div>
+
+                <div class="card p-1">
+                    <div class="book_img rounded-top text-center">
+                        <img src="{{asset('image/a_c.jpg')}}" alt="Agatha_Christie">
+                    </div>
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div class="fit-content rate">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star_half.svg')}}" alt="star">
+                        </div>
+                        <div class="fit-content">
+                            <span class="text-smt-sixth">Gratuit</span>
+                        </div>
+                    </div>
+                    <a href="#" class="fit-content mx-auto px-5 py-2 bg-smt-primary text-decoration-none rounded text-white font-weight-bold">Voir le livre</a>
+                </div>
+            </div>
+            <div class="fit-content my-5 ml-2 font-weight-bold">
+                <a href="#"><span class="mr-2">Voir tous les livres sur le développement personnel</span><i class="far fa-long-arrow-right"></i></a>
+            </div>
+
+            <h2 class="font-weight-bold my-5">Les livres sur les sciences</h2>
+            <div class="row books_row">
+                <div class="card p-1">
+                    <div class="book_img rounded-top text-center">
+                        <img src="{{asset('image/a_c.jpg')}}" alt="Agatha_Christie">
+                    </div>
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div class="fit-content rate">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star_half.svg')}}" alt="star">
+                        </div>
+                        <div class="fit-content">
+                            <span class="text-smt-sixth">Gratuit</span>
+                        </div>
+                    </div>
+                    <a href="#" class="fit-content mx-auto px-5 py-2 bg-smt-primary text-decoration-none rounded text-white font-weight-bold">Voir le livre</a>
+                </div>
+
+                <div class="card p-1">
+                    <div class="book_img rounded-top text-center">
+                        <img src="{{asset('image/a_c.jpg')}}" alt="Agatha_Christie">
+                    </div>
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div class="fit-content rate">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star_half.svg')}}" alt="star">
+                        </div>
+                        <div class="fit-content">
+                            <span class="text-smt-sixth">Gratuit</span>
+                        </div>
+                    </div>
+                    <a href="#" class="fit-content mx-auto px-5 py-2 bg-smt-primary text-decoration-none rounded text-white font-weight-bold">Voir le livre</a>
+                </div>
+
+                <div class="card p-1">
+                    <div class="book_img rounded-top text-center">
+                        <img src="{{asset('image/a_c.jpg')}}" alt="Agatha_Christie">
+                    </div>
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div class="fit-content rate">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star_half.svg')}}" alt="star">
+                        </div>
+                        <div class="fit-content">
+                            <span class="text-smt-sixth">Gratuit</span>
+                        </div>
+                    </div>
+                    <a href="#" class="fit-content mx-auto px-5 py-2 bg-smt-primary text-decoration-none rounded text-white font-weight-bold">Voir le livre</a>
+                </div>
+
+                <div class="card p-1">
+                    <div class="book_img rounded-top text-center">
+                        <img src="{{asset('image/a_c.jpg')}}" alt="Agatha_Christie">
+                    </div>
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div class="fit-content rate">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star.svg')}}" alt="star">
+                            <img src="{{asset('dist/img/star_half.svg')}}" alt="star">
+                        </div>
+                        <div class="fit-content">
+                            <span class="text-smt-sixth">Gratuit</span>
+                        </div>
+                    </div>
+                    <a href="#" class="fit-content mx-auto px-5 py-2 bg-smt-primary text-decoration-none rounded text-white font-weight-bold">Voir le livre</a>
+                </div>
+            </div>
+            <div class="fit-content my-5 ml-2 font-weight-bold">
+                <a href="#"><span class="mr-2">Voir tous les livres sur les sciences</span><i class="far fa-long-arrow-right"></i></a>
             </div>
 
         </div>
