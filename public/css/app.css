@@ -31,6 +31,7 @@ body {
 .hover-text-smt-primary:hover {color: var(--smt-primary);}
 .hover-text-smt-fifth:hover {color: var(--smt-fifth);}
 .hover-text-smt-tertiary:hover {color: var(--smt-tertiary);}
+.hover-bg-smt-secondary:hover {filter: brightness(.75);}
 
 .border-smt-fourth {border: .5px solid var(--smt-fourth);}
 
@@ -157,23 +158,4 @@ main {
 
 .books_row > .card > a:hover {
     filter: brightness(.75);
-}
-
-.books_carousel_container {
-    width: 100%;
-    height: fit-content;
-}
-
-.books_carousel_container .carousel_row {
-    width: 90%;
-    overflow-x: hidden;
-}
-
-.carousel_row .books_row .card {
-    width: calc(21% / 1px);
-}
-
-.books_carousel_container > button {
-    outline: none;
-    font-size: 35px;
 }
