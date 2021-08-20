@@ -31,12 +31,16 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="recipient-name" class="col-form-label">Langue:</label>
+
+                                                <select class="option form-control" name="langue"placeholder="Choisir votre langue">
+
                                                 <select class="option form-control" name="langue" placeholder="Choisir votre langue">
                                                     <option value="">Choisissez la langue</option>
                                                     <option value="Française">Française </option>
-                                                    <option value="Englais">Englais </option>
+                                                    <option value="Anglaise">Anglaise </option>
+                                                    <option value="Anglaise">Allemand</option>
                                                     <option value="Arabe">Arabe</option>
-                                                    <option value="Espagnole">Espagnole </option>
+                                                    <option value="Espagnole">Espagnole</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
@@ -90,7 +94,6 @@
                                         {{ $language->langue }}
                                     </a>
                                     <br />
-
                                 </td>
                                 <td class="text-center">
                                     <ul class="list-inline">

@@ -40,6 +40,7 @@
                                                     <option value="Albanie">Albanie </option>
                                                     <option value="Algerie">Algerie </option>
                                                     <option value="Allemagne">Allemagne </option>
+                                                    <option value="Angleterre">Angleterre</option>
                                                     <option value="Andorre">Andorre </option>
                                                     <option value="Angola">Angola </option>
                                                     <option value="Anguilla">Anguilla </option>

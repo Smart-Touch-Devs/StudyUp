@@ -9,6 +9,7 @@ use App\Countries;
 use App\Editors;
 use App\Languages;
 use Illuminate\Http\Request;
+use League\CommonMark\Block\Element\Document;
 
 class BooksController extends Controller
 {
@@ -45,12 +46,14 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
+        
      $request->validate([
             'titre'=>'required|string|',
             'categorie_id' => 'required',
             'editeur_id' => 'required',
             'langue_id' => 'required',
             'description' => 'required|string|',
+            // 'document' => 'required|string|',
             'page' => 'required|integer|',
             'auteur_id' => 'required',
             'pays_id' => 'required',
@@ -65,26 +68,14 @@ class BooksController extends Controller
             $image->move($destinationPath, $picture);
             $input['photo'] = "$picture";
         }
+        $data=new Document;
+        if ($request->file('document')){
+            $pdf=$request->file('document');
+            $filename= time(). "." . $pdf->getClientOriginalExtension();
+            $request->document->move('storage/'. $filename);
+        }
         Books::create($input);
-        
-        $image = request('photo')->store('image','public');
-               
-        
-        Books::create([
-            'titre'=>request('titre'),
-            'categorie_id'=>request('categorie_id'),
-            'editeur_id'=>request('editeur_id'),
-            'langue_id'=>request('langue_id'),
-            'description'=>request('description'),
-            'page'=>request('page'),
-            'auteur_id'=>request('auteur_id'),
-            'pays_id'=>request('pays_id'),
-            'prix'=>request('prix'),
-            'meuble'=>request('meuble'),
-            'photo'=>request('photo'),
-            'photo'=>$image,
-    
-       ]);
+
         return redirect()->intended('books')->with('success', "L'article a été ajouté avec succes");
     }
 

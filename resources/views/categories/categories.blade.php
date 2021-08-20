@@ -94,11 +94,11 @@
                                             </i>
                                             Supprimer
                                         </button>
-                                        <!-- <script>
+                                        <script>
                                             function alerte(){
                                                 alert('Voulez-vous vraiment retirer cette catégorie?')
                                             }
-                                        </script> -->
+                                        </script>
                                     </form>
                                 </td>
                                 @empty

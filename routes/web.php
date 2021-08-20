@@ -6,7 +6,6 @@ use App\Http\Controllers\ContactsController;
 use Illuminate\Support\Facades\Auth;
 
 
-
 Route::get('/master', 'DashboardController@master')->name('master');
 Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes(['verify' => true]);
@@ -27,6 +26,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('quest', 'QuestsController');
 });
 Route::resource('/', 'HomesController');
+
 
 Route::get('/contacts', [ContactsController::class, 'index']);
 //Routes articles/blog
