@@ -9,6 +9,7 @@ use App\Countries;
 use App\Editors;
 use App\Languages;
 use Illuminate\Http\Request;
+use League\CommonMark\Block\Element\Document;
 
 class BooksController extends Controller
 {
@@ -46,19 +47,20 @@ class BooksController extends Controller
     public function store(Request $request)
     {
         
-     $data=$request->validate([
+     $request->validate([
             'titre'=>'required|string|',
-            'categorie_id' => 'string',
-            'editeur_id' => 'string',
-            'langue_id' => 'string',
+            'categorie_id' => 'required',
+            'editeur_id' => 'required',
+            'langue_id' => 'required',
             'description' => 'required|string|',
+            // 'document' => 'required|string|',
             'page' => 'required|integer|',
-            'auteur_id' => 'string',
-            'pays_id' => 'string',
+            'auteur_id' => 'required',
+            'pays_id' => 'required',
             'prix' => 'required|integer|',
             'photo' => '|image|',
         ]);
-dd($data);
+
         $input = $request->all();
         if ($image = $request->file('photo')) {
             $destinationPath = 'image/';
@@ -66,27 +68,13 @@ dd($data);
             $image->move($destinationPath, $picture);
             $input['photo'] = "$picture";
         }
+        $data=new Document;
+        if ($request->file('document')){
+            $pdf=$request->file('document');
+            $filename= time(). "." . $pdf->getClientOriginalExtension();
+            $request->document->move('storage/'. $filename);
+        }
         Books::create($input);
-        
-
-        // $image = request('photo')->store('image','public');
-               
-        
-        // Books::create([
-        //     'titre'=>request('titre'),
-        //     'categorie_id'=>request('categorie_id'),
-        //     'editeur_id'=>request('editeur_id'),
-        //     'langue_id'=>request('langue_id'),
-        //     'description'=>request('description'),
-        //     'page'=>request('page'),
-        //     'auteur_id'=>request('auteur_id'),
-        //     'pays_id'=>request('pays_id'),
-        //     'prix'=>request('prix'),
-        //     'meuble'=>request('meuble'),
-        //     'photo'=>request('photo'),
-        //     'photo'=>$image,
-    
-       // ]);
         return redirect()->intended('books')->with('success', "L'article a été ajouté avec succes");
     }
 

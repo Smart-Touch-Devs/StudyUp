@@ -17,8 +17,16 @@
                 @csrf
                 <div class="form-group">
                     <label>Nom:</label>
-                    <input type="text" value="{{ $languages->langue }}" name="langue" class="form-control">
                     <input type="hidden" name="langueId" value="{{ $languages->id }}">
+                    <select type="text" value="{{ $languages->langue }}" name="langue" class="form-control"
+                        placeholder="Choisir votre langue">
+                        <option value="">Choisissez la langue</option>
+                        <option value="Française">Française </option>
+                        <option value="Anglaise">Anglaise </option>
+                        <option value="Anglaise">Allemand </option>
+                        <option value="Arabe">Arabe</option>
+                        <option value="Espagnole">Espagnole </option>
+                    </select>
                     {!! $errors->first('language', '<small class="text-danger">:message</small>') !!}
                 </div>
                 <div class="form-group">

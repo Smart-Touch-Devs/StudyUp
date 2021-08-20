@@ -25,6 +25,7 @@ class CreateBooksTable extends Migration
             $table->unsignedBigInteger('pays_id');
             $table->integer('prix');
             $table->string('photo');
+            $table->string('document');
 
             $table->foreign('pays_id')
             ->references('id')
