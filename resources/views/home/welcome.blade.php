@@ -16,7 +16,6 @@
         scroll-behavior: smooth;
     }
 </style>
-
 <body style="background: #fff;">
     @foreach($notifications as $notification)
     <div class="container-fluid bg-smt-tertiary">
@@ -30,41 +29,7 @@
     </div>
     @endforeach
     <div class="home_container mx-auto d-flex flex-column">
-        <div class="mx-auto">
-            <header class="navbar navbar-light d-flex ustify-content-space-between bg-smt-primary py-2 m-0">
-                <a class="navbar-brand d-flex align-items-center" href="#">
-                    <img src="{{asset('dist/img/logo.png')}}" width="50" height="50" class="d-inline-block align-top bg-light rounded-circle mr-2" alt="">
-                    <span class="h3 text-white font-weight-bold">StudyUp</span>
-                </a>
-                <button class="text-white fit-content font-weight-bold border-0 text-center col-1 smt-sm-showNavBtn">
-                    <i class="fal fa-bars"></i>
-                </button>
-                <div class="navContainer">
-                    <nav class="smt-sm-sidebar">
-                        <button class="text-white border-0 smt-sm-hideNavBtn">
-                            <i class="fal fa-times"></i>
-                        </button>
-                        <ul class="nav justify-content-end header-nav">
-                            <li class="nav-item">
-                                <a class="nav-link font-weight-bold" href="{{ asset('blog') }}">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link font-weight-bold" href="">FAQs</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link font-weight-bold" href="{{ asset('contacts') }}">Contacter</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link font-weight-bold" href="{{ asset('a_propos') }}">À propos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link font-weight-bold" href="{{ asset('login') }}">Se connecter</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
-        </div>
+        @include('layouts.header')
         <main class="mt-0 py-4 p-0">
             <div class="container-fluid my-5">
                 <div class="row justify-content-around">
