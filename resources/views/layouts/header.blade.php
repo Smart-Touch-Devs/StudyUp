@@ -18,7 +18,7 @@
               <a class="nav-link font-weight-bold" href="{{ asset('blog') }}">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="">FAQs</a>
+              <a class="nav-link font-weight-bold" href="{{asset('quest')}}">FAQs</a>
             </li>
             <li class="nav-item">
               <a class="nav-link font-weight-bold" href="{{ asset('contacts') }}">Contacter</a>
