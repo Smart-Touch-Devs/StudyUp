@@ -159,3 +159,28 @@ main {
 .books_row > .card > a:hover {
     filter: brightness(.75);
 }
+
+/* show */
+
+.boutton{
+    position:relative;
+    bottom: -380px;
+}  
+
+.card{
+    margin-top: 175px;
+    border-radius: 10px;
+    position: relative; 
+}
+.poster{
+    border-radius: 7px;
+    position: absolute;
+    top: -150px;
+    left: 75px;
+}
+
+.text-titre{
+    position: absolute;
+    right: 25px;
+    top: 10px;
+}
