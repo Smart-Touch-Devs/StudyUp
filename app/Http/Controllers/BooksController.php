@@ -75,6 +75,7 @@ class BooksController extends Controller
             $request->document->move('storage/'. $filename);
         }
         Books::create($input);
+
         return redirect()->intended('books')->with('success', "L'article a été ajouté avec succes");
     }
 

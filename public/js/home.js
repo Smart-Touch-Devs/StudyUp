@@ -12,3 +12,9 @@ hideNavBtn.addEventListener('click', function() {
     navContainer.style.display = "none";
     
 })
+
+function goToID(id) {
+    document.querySelector(id).scrollIntoView({
+      behavior: 'smooth'
+    });
+  }

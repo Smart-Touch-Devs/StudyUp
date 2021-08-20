@@ -22,6 +22,7 @@
                     {!! $errors->first('categorie', '<small class="text-danger">:message</small>') !!}
                 </div>
                 <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Icone:</label>
                     <input type="file" value="{{ $categories->icone }}" class="form-control-file" name="icone" id="exampleFormControlFile1">
                 </div>
                 <button type="submit" class="btn btn-primary">Modifier</button>

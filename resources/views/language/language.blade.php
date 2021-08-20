@@ -16,10 +16,8 @@
                 <div class="card-header">
                     <h3 class="card-title font-weight-bold text-uppercase">Language</h3>
                     <div class="card-tools d-flex justify-content-between">
-                        <button type="button" class="btn btn-block btn-outline-success btn-sm" data-toggle="modal"
-                            data-target="#exampleModal" data-whatever="@fat">Ajouter une langue</button>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <button type="button" class="btn btn-block btn-outline-success btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Ajouter une langue</button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -29,13 +27,14 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form method="POST" action="{{ route('language.store') }}"
-                                            enctype="multipart/form-data">
+                                        <form method="POST" action="{{ route('language.store') }}" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group">
                                                 <label for="recipient-name" class="col-form-label">Langue:</label>
-                                                <select class="option form-control" name="langue"
-                                                    placeholder="Choisir votre langue">
+
+                                                <select class="option form-control" name="langue"placeholder="Choisir votre langue">
+
+                                                <select class="option form-control" name="langue" placeholder="Choisir votre langue">
                                                     <option value="">Choisissez la langue</option>
                                                     <option value="Française">Française </option>
                                                     <option value="Anglaise">Anglaise </option>
@@ -45,14 +44,14 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <input type="file" name="icone" class="form-control-file"
-                                                    id="exampleFormControlFile1">
+                                                <label>Icone:</label>
+                                                <input type="file" name="icone" class="form-control-file" id="exampleFormControlFile1">
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                                     Retour
                                                 </button>
-                                                <button type="submit" class="btn btn-primary">Envoyez
+                                                <button type="submit" class="btn btn-primary">Valider
                                                 </button>
                                             </div>
                                         </form>
@@ -99,14 +98,13 @@
                                 <td class="text-center">
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
-                                            <img alt="language" class="cercle"
-                                                src="{{asset('image').'/'.$language->icone}}">
+                                            <img alt="language" class="cercle" src="{{asset('image').'/'.$language->icone}}">
                                             <style>
-                                            .cercle {
-                                                width: 80px;
-                                                height: 80px;
-                                                border-radius: 50%;
-                                            }
+                                                .cercle {
+                                                    width: 80px;
+                                                    height: 80px;
+                                                    border-radius: 50%;
+                                                }
                                             </style>
                                         </li>
                                     </ul>
@@ -128,17 +126,13 @@
                                             </i>
                                             Supprimer
                                         </button>
-
                                     </form>
                                 </td>
                                 @empty
                                 <div class="alert alert-danger col-md-12 col-xs-12" role="alert">
                                     <p class='font-weight-bolder text-center '>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="bi bi-exclamation-circle-fill"
-                                            viewBox="0 0 16 16">
-                                            <path
-                                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill " viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                         </svg>
                                         Aucune langue disponible
                                     </p>

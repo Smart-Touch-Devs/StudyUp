@@ -11,13 +11,10 @@
         </div>
     </div>
     <div class="container">
-
         <div class="card ">
             <div class="card-header">
                 <h3 class="card-title">Modifier l'article</h3>
             </div>
-            <!-- /.card-header -->
-            <!-- form start -->
             @if ($message = Session::get('success'))
             <div class="alert alert-success alert-block">
                 <button type="button" class="close ml-1" data-dismiss="alert">
@@ -85,7 +82,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Valider</button>
+                    <button type="submit" class="btn btn-primary">Publier</button>
                 </div>
             </form>
         </div>
