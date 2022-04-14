@@ -15,5 +15,3 @@ Route::get('/confirmation', function(Request $request) {
     return view('auth.verify');
     $request->session()->flush();
 })->name('auth.confirmation');
-Route::get('/email4reset', [ResetPasswordController::class, 'index'])->name('password.email4reset');
-Route::post('/email', [ResetPasswordController::class, 'email'])->name('password.mail');

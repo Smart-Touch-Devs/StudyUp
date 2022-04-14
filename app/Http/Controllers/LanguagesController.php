@@ -12,20 +12,9 @@ class LanguagesController extends Controller
      */
     public function index()
     {
-        $languages = Languages::all();
+        $languages = Languages::idDescending()->paginate(5)->fragment('editors');
         return view('language.language', compact('languages'));
-        
-    }
-    
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**

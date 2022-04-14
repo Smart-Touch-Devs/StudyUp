@@ -14,18 +14,8 @@ class EditorsController extends Controller
      */
     public function index()
     {
-        $editors = Editors::all();
+        $editors = Editors::idDescending()->paginate(5)->fragment('editors');
         return view('editors.editors', compact('editors'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -49,17 +39,6 @@ class EditorsController extends Controller
         }
         Editors::create($input);
         return redirect()->intended('editors')->with('success', 'La catégorie a été ajouté avec succes');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Editors  $editors
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Editors $editors)
-    {
-        //
     }
 
     /**
@@ -87,10 +66,10 @@ class EditorsController extends Controller
             'nom' => 'required|string|',
             'icone' => '|image|',
         ]);
-        
+
         $input = [];
         $input['nom'] = $request->input('nom');
-  
+
         if ($image = $request->file('icone')) {
             $destinationPath = 'image/';
             $iconeImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
@@ -99,7 +78,7 @@ class EditorsController extends Controller
         }else{
             unset($input['icone']);
         }
-          
+
         $editors->where('id', $request->input('editorId'))->update($input);
 
         return redirect()->intended('editors')->with('success', 'La modification a été effectué avec succes');

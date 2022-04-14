@@ -23,9 +23,9 @@
                 </div>
                 <div class="form-group">
                     <label for="recipient-name" class="col-form-label">Icone:</label>
-                    <input type="file" value="{{ $categories->icone }}" class="form-control-file" name="icone" id="exampleFormControlFile1">
+                    <input type="file" value="{{ $categories->icone }}" class="form-control-file" name="icone" required >
                 </div>
-                <button type="submit" class="btn btn-primary">Modifier</button>
+                <button type="submit" class="btn btn-primary">Modifier la catégorie</button>
             </form>
         </section>
     </div>

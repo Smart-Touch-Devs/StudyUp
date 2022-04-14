@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class LoginController extends Controller
@@ -52,10 +53,14 @@ class LoginController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required']
         ]);
-
-        if(Auth::attempt($credentials)) {
+        $recuperation = DB::select('select role_id  from users where email=?', [$request->input('email')]);
+        if(Auth::attempt($credentials) && $recuperation[0]->role_id == 1) {
+            $request->session()->regenerate();
             return redirect()->intended('/admin');
+        }elseif (Auth::attempt($credentials) && $recuperation[0]->role_id == 2) {
+            return'Vous n\etes pas autorisé ';
+        }else {
+            return Redirect::back()->withErrors(['warning' => "L'un des champs entré est incorrect!"]);
         }
-        else return Redirect::back()->withErrors(['error' => "L'un des champs entré est incorrect!"]);
     }
 }

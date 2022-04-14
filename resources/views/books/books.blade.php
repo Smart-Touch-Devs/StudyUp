@@ -15,7 +15,7 @@
             <div class="col-md-12">
                 <div class="card ">
                     <div class="card-header">
-                        <h3 class="card-title font-weight-bolder">Ajouter un livre</h3>
+                        <h3 class="card-title font-weight-bolder">Ajouter un livre </h3>
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                                 <i class="fas fa-minus"></i>
@@ -42,11 +42,10 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="inputName">Titre du livre</label>
-                                        <input type="text" name="titre" id="inputName" class="form-control">
+                                        <input type="text" name="titre" id="inputName" class="form-control" placeholder='Veuillez entre le titre du livre' required'>
                                     </div>
-
                                     <div class="form-group">
-                                        <label for="inputStatus">Categories</label>
+                                        <label for="inputStatus">Catégories</label>
                                         <select id="inputStatus" name="categorie_id" class="form-control custom-select">
                                             @foreach($categories as $categorie)
                                             <option selected value="{{ $categorie->id }}">{{ $categorie->categorie }}
@@ -71,7 +70,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputDescription">Description</label>
+                                        <label for="inputDescription">Description /Resumé</label>
                                         <textarea id="inputDescription" name="description" class="form-control"
                                             rows="10"></textarea>
                                     </div>
@@ -79,7 +78,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="inputName">Nombre de pages</label>
-                                    <input type="number" name="page" id="inputName" class="form-control">
+                                    <input type="number" name="page" id="inputName" class="form-control" placeholder="Veuillez entrer le nombre de page du livre">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputStatus">Auteur</label>
@@ -100,7 +99,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="inputClientCompany">Prix</label>
-                                    <input type="number" name="prix" id="inputClientCompany" class="form-control">
+                                    <input type="number" name="prix" id="inputClientCompany" class="form-control" placeholder="Veuillez entrer le prix du livre">
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -155,14 +154,94 @@
                                             <label for="">Ajouter un document</label>
                                         </div>
                                         <div class="card">
-                                            <input class="input bg-white-50" type="file" name="document" value="">
-
+                                            <input class="input bg-white-50" type="file" name="document"  accept="pdf">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Enregister</button>
+                            <button type="submit" class="btn btn-primary">Publier </button>
                             </form>
+                        </div>
+                        <div class="card my-5">
+                            <div class="card-header">
+                                <h3 class="card-title font-weight-bold text-uppercase">Liste des livres ( {{ count($books) }} )</h3>
+                                <div class="card-tools d-flex justify-content-between">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <table class="table table-striped projects">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 20%">
+                                                NOM DU LIVRE
+                                            </th>
+                                            <th style="width: 20%" class="text-center">
+                                                AUTEURS
+                                            </th>
+                                            <th style="width: 30%" class="text-center">
+                                                LANGUES
+                                            </th>
+                                            <th style="width: 30%" class="text-center">
+                                                NOMBRE DE PAGE
+                                            </th>
+                                            <th style="width: 30%" class="text-center">
+                                                PRIX
+                                            </th>
+                                            <th style="width: 20%" class="text-center">
+                                                ACTIONS
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                        @forelse ($books as $book)
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                            {{ $book->titre }}
+                                            </td>
+                                            <td class="text-center">
+                                            {{ $book->author->nom }}
+                                            </td>
+                                            <td class="text-center">
+                                            {{$book->langues->langue}}
+                                            </td>
+                                            <td class="text-center">
+                                            {{ $book->page }}
+                                            </td>
+                                            <td class="text-center">
+                                            {{ $book->prix }} Fcfa
+                                            </td>
+                                            <td class="  d-flex justify-content-around">
+                                                <a href="{{ route('books.edit',$book->id) }}">
+                                                    <button class="btn btn-info btn-sm " type="button">
+                                                        Editer
+                                                    </button>
+                                                </a>
+                                                <form action="{{ route('books.destroy',$book->id) }}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger btn-sm mx-4" type="submit">
+                                                        Supprimer
+                                                    </button>
+                                                </form>
+                                            </td>
+                                            @empty
+                                            <div class="alert alert-warning col-md-12 col-xs-12" role="alert">
+                                                <p class='font-weight-bolder text-center '>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                                    </svg>
+                                                    Aucun livre  disponible
+                                                </p>
+                                            </div>
+                                        </tr>
+                                    </tbody>
+                                    @endforelse
+                                </table>
+                                {{$books->links()}}
+                            </div>
                         </div>
                     </div>
                 </div>

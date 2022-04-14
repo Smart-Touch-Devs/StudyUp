@@ -14,19 +14,11 @@ class AuthorsController extends Controller
      */
     public function index()
     {
-        $auteurs = Authors::all();
+        $auteurs = Authors::idDescending()->paginate(5)->fragment('authors');
         return view('authors.authors',compact('auteurs'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -46,17 +38,6 @@ class AuthorsController extends Controller
             'prenom' =>request('prenom')
         ]);
         return redirect()->intended('authors')->with('success',"L'auteur a été ajouté avec succes");
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Authors  $authors
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Authors $authors)
-    {
-        //
     }
 
     /**

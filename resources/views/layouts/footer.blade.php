@@ -16,27 +16,27 @@
         </div>
         <ul class="nav flex-column  col-md-3">
             <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="#">À propos</a>
+              <a class="nav-link font-weight-bold" href="{{ route('a_propos') }}">À propos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="#">Blog</a>
+              <a class="nav-link font-weight-bold" href="{{ route('blog.index') }}">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="#">FAQs</a>
+              <a class="nav-link font-weight-bold" href="{{ route('Faqs.index') }}">FAQs</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="#">Nous contacter</a>
+              <a class="nav-link font-weight-bold" href="{{ route('contacts') }}">Nous contacter</a>
             </li>
         </ul>
         <ul class="nav flex-column col-md-3">
             <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="#">Se connecter</a>
+              <a class="nav-link font-weight-bold" href="{{ route('login.auth') }}">Se connecter</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="#">Créer un compte</a>
+              <a class="nav-link font-weight-bold" href="{{ route('register.auth') }}">Créer un compte</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="#">L'entreprise</a>
+              <a class="nav-link font-weight-bold" href="https://www.smt-group.net">L'entreprise</a>
             </li>
             <li class="nav-item">
               <a class="nav-link font-weight-bold" href="#">Politique de confidentialité</a>

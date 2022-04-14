@@ -25,7 +25,8 @@ class BooksController extends Controller
         $editors = Editors::all();
         $authors = Authors::all();
         $categories = Categories::all();
-        return view('books.books',compact('countries','languages','editors','authors','categories'));
+        $books = Books::idDescending()->paginate(5)->fragment('books');
+        return view('books.books', compact('countries', 'languages', 'editors', 'authors', 'categories', 'books'));
     }
 
     /**
@@ -46,14 +47,14 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-        
-     $request->validate([
-            'titre'=>'required|string|',
+
+        $test = $request->validate([
+            'titre' => 'required|string|',
             'categorie_id' => 'required',
             'editeur_id' => 'required',
             'langue_id' => 'required',
             'description' => 'required|string|',
-            // 'document' => 'required|string|',
+            'document' => "required|mimes:pdf|max:10000",
             'page' => 'required|integer|',
             'auteur_id' => 'required',
             'pays_id' => 'required',
@@ -68,15 +69,16 @@ class BooksController extends Controller
             $image->move($destinationPath, $picture);
             $input['photo'] = "$picture";
         }
-        $data=new Document;
-        if ($request->file('document')){
-            $pdf=$request->file('document');
-            $filename= time(). "." . $pdf->getClientOriginalExtension();
-            $request->document->move('storage/'. $filename);
+
+        if ($docs = $request->file('document')) {
+            $destinationPath = 'docs/';
+            $books = date('YmdHis') . "." . $docs->getClientOriginalExtension();
+            $docs->move($destinationPath, $books);
+            $input['document'] = "$books";
         }
         Books::create($input);
 
-        return redirect()->intended('books')->with('success', "L'article a été ajouté avec succes");
+        return redirect()->intended('books')->with('success', " Ajout effectué avec succes");
     }
 
     /**
@@ -96,9 +98,15 @@ class BooksController extends Controller
      * @param  \App\Books  $books
      * @return \Illuminate\Http\Response
      */
-    public function edit(Books $books)
+    public function edit($id)
     {
-        //
+        $countries = Countries::all();
+        $languages = Languages::all();
+        $editors = Editors::all();
+        $authors = Authors::all();
+        $categories = Categories::all();
+        $books = Books::find($id);
+        return view('books.edit', compact('books', 'countries', 'languages', 'editors', 'authors', 'categories'));
     }
 
     /**
@@ -110,7 +118,56 @@ class BooksController extends Controller
      */
     public function update(Request $request, Books $books)
     {
-        //
+        $request->validate([
+            'titre' => 'required|string|',
+            'categorie_id' => 'required',
+            'editeur_id' => 'required',
+            'langue_id' => 'required',
+            'description' => 'required|string|',
+            'page' => 'required|integer|',
+            'auteur_id' => 'required',
+            'pays_id' => 'required',
+            'prix' => 'required|integer|',
+            'photo' => '|image|',
+            'document' => "|mimes:pdf|max:10000",
+        ]);
+
+        $input = [];
+        $input['titre'] = $request->input('titre');
+        $input['categorie_id'] = $request->input('categorie_id');
+        $input['editeur_id'] = $request->input('editeur_id');
+        $input['langue_id'] = $request->input('langue_id');
+        $input['description'] = $request->input('description');
+        $input['page'] = $request->input('page');
+        $input['auteur_id'] = $request->input('auteur_id');
+        $input['pays_id'] = $request->input('pays_id');
+        $input['prix'] = $request->input('prix');
+
+
+
+        if ($image = $request->file('photo')) {
+            $destinationPath = 'image/';
+            $iconeImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $iconeImage);
+            $input['photo'] = $iconeImage;
+        } else {
+            unset($input['photo']);
+        }
+
+        if ($docs = $request->file('document')) {
+            $destinationPath = 'docs/';
+            $books = date('YmdHis') . "." . $docs->getClientOriginalExtension();
+            $docs->move($destinationPath, $books);
+            $input['document'] = $books;
+        } else {
+            unset($input['document']);
+        }
+
+        // $books->where('id', $request->input('bookId'))->update($input);
+        $books = Books::where('id',$request->input('bookId'))->first();
+        $books->update($input);
+
+        return redirect()->intended('books')->with('success', 'La modification a été effectué avec succes');
     }
 
     /**
@@ -119,8 +176,10 @@ class BooksController extends Controller
      * @param  \App\Books  $books
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Books $books)
+    public function destroy($id)
     {
-        //
+        $books = Books::find($id);
+        $books->delete();
+        return redirect('books')->with('success', 'La suppression a été effectué avec succes');
     }
 }

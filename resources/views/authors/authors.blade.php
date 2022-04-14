@@ -29,7 +29,7 @@
             @endif
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title font-weight-bold text-uppercase">Auteurs</h3>
+                    <h3 class="card-title font-weight-bold text-uppercase">Auteurs ( {{count($auteurs)}})</h3>
 
                     <div class="card-tools d-flex justify-content-between">
                         <button type="button" class="btn btn-block btn-outline-success btn-sm" data-toggle="modal"
@@ -43,14 +43,11 @@
                     <table class="table table-striped projects">
                         <thead>
                             <tr>
-                                <th style="width: 1%">
-                                    N°
+                                <th style="width: 20%" class="text-center">
+                                    NOM DE L'AUTEUR
                                 </th>
                                 <th style="width: 20%" class="text-center">
-                                    NOM
-                                </th>
-                                <th style="width: 20%" class="text-center">
-                                    PRENOM(S)
+                                    PRENOM DE L'AUTEUR(S)
                                 </th>
                                 <th style="width: 20%" class="text-center">
                                     ACTIONS
@@ -60,16 +57,13 @@
                         @forelse($auteurs as $auteur)
                         <tbody>
                             <tr>
-                                <td>
-                                    {{ $auteur->id }}
-                                </td>
                                 <td class="text-center">
                                     {{ $auteur->nom }}
                                 </td>
                                 <td class="text-center">
                                     {{ $auteur->prenom }}
                                 </td>
-                                <td class=" d-flex justify-content-around my-4 ">
+                                <td class=" d-flex justify-content-around  ">
                                     <a href="{{ route('authors.edit',$auteur->id) }}">
                                         <button class="btn btn-info btn-sm " type="button">
                                             <i class="fas fa-pencil-alt">
@@ -108,6 +102,7 @@
                         </tbody>
                         @endforelse
                     </table>
+                    {{$auteurs->links()}}
                 </div>
             </div>
 

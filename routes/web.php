@@ -3,6 +3,7 @@
 use App\Http\Controllers\AppController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -30,11 +31,11 @@ Route::group(['middleware' => ['auth']], function () {
 Route::resource('/', 'HomesController');
 
 
-Route::get('/contacts', [ContactsController::class, 'index']);
+Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
 //Routes articles/blog
 Route::resource('blog', 'BlogController');
 //Routes a propos
-Route::get('a_propos', 'AproposController@vue');
+Route::get('a_propos', 'AproposController@vue')->name('a_propos');
 //Routes books
 Route::resource('books', 'BooksController');
 //Routes Notifications
@@ -42,3 +43,10 @@ Route::resource('books', 'BooksController');
 Route::resource('notifications','NotificationsController');
 Route::get('/app', [AppController::class, 'index']);
 Route::get('/app/show', [AppController::class, 'show']);
+
+
+
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');

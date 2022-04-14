@@ -14,7 +14,7 @@
         <section class="content">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title font-weight-bold text-uppercase">Language</h3>
+                    <h3 class="card-title font-weight-bold text-uppercase">Language ( {{count($languages)}} )</h3>
                     <div class="card-tools d-flex justify-content-between">
                         <button type="button" class="btn btn-block btn-outline-success btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Ajouter une langue</button>
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -31,9 +31,6 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="recipient-name" class="col-form-label">Langue:</label>
-
-                                                <select class="option form-control" name="langue"placeholder="Choisir votre langue">
-
                                                 <select class="option form-control" name="langue" placeholder="Choisir votre langue">
                                                     <option value="">Choisissez la langue</option>
                                                     <option value="Française">Française </option>
@@ -68,9 +65,6 @@
                     <table class="table table-striped projects">
                         <thead>
                             <tr>
-                                <th style="width: 1%">
-                                    N°
-                                </th>
                                 <th style="width: 20%" class="text-center">
                                     NOM
                                 </th>
@@ -85,10 +79,6 @@
                         @forelse($languages as $language)
                         <tbody>
                             <tr>
-                                <td>
-                                    {{ $language->id }}
-                                </td>
-
                                 <td class="text-center">
                                     <a>
                                         {{ $language->langue }}
@@ -109,8 +99,7 @@
                                         </li>
                                     </ul>
                                 </td>
-
-                                <td class="  d-flex justify-content-around my-4">
+                                <td class="  d-flex justify-content-around ">
                                     <a href="{{ route('language.edit',$language->id) }}">
                                         <button class="btn btn-info btn-sm " type="button">
                                             <i class="fas fa-pencil-alt">
@@ -142,7 +131,6 @@
                         @endforelse
                     </table>
                 </div>
-
         </section>
     </div>
 </div>

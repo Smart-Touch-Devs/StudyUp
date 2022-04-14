@@ -13,18 +13,8 @@ class CountriesController extends Controller
      */
     public function index()
     {
-        $countries = Countries::all();
+        $countries = Countries::idDescending()->paginate(5)->fragment('countries');
         return view('countrie.countrie', compact('countries'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -48,17 +38,6 @@ class CountriesController extends Controller
         }
        Countries::create($input);
         return redirect()->intended('countrie')->with('success', 'Ajout reussi avec succes!');
-    }
-
-    /** 
-     * Display the specified resource.
-     *
-     * @param  \App\Countries  $countries
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Countries $countries)
-    {
-        //
     }
 
     /**

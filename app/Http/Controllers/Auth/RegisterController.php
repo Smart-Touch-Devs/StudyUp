@@ -19,7 +19,8 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function index() {
+    public function index()
+    {
         return view("auth.register");
     }
 
@@ -33,21 +34,22 @@ class RegisterController extends Controller
         ]);
         User::create([
             'firstname' => $request->input('firstname'),
+            'role_id' => 2,
             'lastname' => $request->input('lastname'),
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password')),
         ]);
+        return redirect()->back()->with('success', 'Votre enregistrement a été un succès');
+        // $request->session()->put([
+        //     'confirmation_data_exist' => true,
+        //     'title' => "Votre inscription a été un succcès:)",
+        //     'body' => [
+        //         0 => "Nous venons de vous envoyer un mail de confirmation.",
+        //         1 => "Vueillez consulter votre boite mail puis cliquer sur le lien pour verifier votre e-mail."
+        //     ],
+        // ]);
 
-        $request->session()->put([
-            'confirmation_data_exist' => true,
-            'title' => "Votre inscription a été un succcès:)",
-            'body' => [
-                0 => "Nous venons de vous envoyer un mail de confirmation.",
-                1 => "Vueillez consulter votre boite mail puis cliquer sur le lien pour verifier votre e-mail."
-            ],
-        ]);
+        // return redirect()->intended($this->redirectTo);
 
-        return redirect()->intended($this->redirectTo);
-        
     }
 }

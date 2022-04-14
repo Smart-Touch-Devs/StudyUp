@@ -17,7 +17,7 @@ class CreateArticlesTable extends Migration
             $table->id();
             $table->string('titre');
             $table->string('color');
-            $table->string('contenu');
+            $table->longText('contenu');
             $table->string('photo');
             $table->string('last_article')->nullable();
             $table->timestamps();

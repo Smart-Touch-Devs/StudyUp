@@ -14,7 +14,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Categories::all();
+        $categories = Categories::idDescending()->paginate(5)->fragment('categories');
         return view('categories.categories', compact('categories'));
     }
 
@@ -48,33 +48,16 @@ class CategoriesController extends Controller
             $input['icone'] = "$iconeImage";
         }
         Categories::create($input);
-        return redirect()->intended('categories')->with('success', 'La catégorie a été ajouté avec succes');
+        return redirect()->intended('categories')->with('success', 'La catégorie a été ajouté avec succès');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Categories  $categories
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Categories $categories)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Categories  $categories
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $categories = Categories::find($id);
         return view('categories.edit', compact('categories'));
     }
 
-    /** 
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

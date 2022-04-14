@@ -53,7 +53,7 @@ class ArticlesController extends Controller
         Articles::create($input);
         return redirect()->intended('articles')->with('success', "L'article a été ajouté avec succes");
     }
-    
+
 
     /**
      * Display the specified resource.
@@ -92,15 +92,13 @@ class ArticlesController extends Controller
             'color' => 'required|string|',
             'contenu' => 'required|string|',
             'photo' => 'required|image|',
-
-           
         ]);
-        
+
         $input = [];
         $input['titre'] = $request->input('titre');
         $input['color'] = $request->input('color');
         $input['contenu'] = $request->input('contenu');
-  
+
         if ($image = $request->file('photo')) {
             $destinationPath = 'image/';
             $picture = date('YmdHis') . "." . $image->getClientOriginalExtension();
@@ -109,7 +107,7 @@ class ArticlesController extends Controller
         }else{
             unset($input['photo']);
         }
-          
+
         $articles->where('id', $request->input('articleId'))->update($input);
 
         return redirect()->intended('articles')->with('success', 'La modification a été effectué avec succes');

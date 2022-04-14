@@ -14,7 +14,7 @@
         <section class="content">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title font-weight-bold text-uppercase">Countries</h3>
+                    <h3 class="card-title font-weight-bold text-uppercase">Countries ({{count($countries)}})</h3>
                     <div class="card-tools d-flex justify-content-between">
                         <button type="button" class="btn btn-block btn-outline-success btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Ajouter un pays</button>
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -312,11 +312,8 @@
                     <table class="table table-striped projects">
                         <thead>
                             <tr>
-                                <th style="width: 1%">
-                                    N°
-                                </th>
                                 <th style="width: 20%" class="text-center">
-                                    NOM
+                                    NOM DU PAYS
                                 </th>
                                 <th style="width: 30%" class="text-center">
                                     ICONE
@@ -329,10 +326,6 @@
                         @forelse($countries as $countrie)
                         <tbody>
                             <tr>
-                                <td>
-                                    {{ $countrie->id }}
-                                </td>
-
                                 <td class="text-center">
                                     <a>
                                         {{ $countrie->pays }}
@@ -355,7 +348,7 @@
                                     </ul>
                                 </td>
 
-                                <td class="  d-flex justify-content-around my-4">
+                                <td class="  d-flex justify-content-around ">
                                     <a href="{{ route('countrie.edit',$countrie->id) }}">
                                         <button class="btn btn-info btn-sm " type="button">
                                             <i class="fas fa-pencil-alt">
@@ -371,7 +364,6 @@
                                             </i>
                                             Supprimer
                                         </button>
-
                                     </form>
                                 </td>
                                 @empty
@@ -387,6 +379,7 @@
                         </tbody>
                         @endforelse
                     </table>
+                    {{ $countries->links() }}
                 </div>
             </div>
         </section>

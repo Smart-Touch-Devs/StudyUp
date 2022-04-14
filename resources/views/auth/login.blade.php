@@ -1,4 +1,4 @@
-  
+
 @extends('layouts.auth')
 
 @section('content')
@@ -12,14 +12,14 @@
 </div>
 <div class="fit-content">
     <div class="fit-content p-md-5 p-3 bg-white rounded border shadow-sm login-card">
-        @error('error')
+        @if($message = Session::get('warning'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             {{$message}}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        @enderror
+        @endif
         <form action="{{ route('login.auth') }}" method="post" class="fit-content login text-center mx-auto">
             @csrf
             <div class="fit-content c mb-4 border rounded">
@@ -29,10 +29,10 @@
                 <input type="password" name="password" placeholder="Mot de passe" required class="login_password border-0 text-indent-3">
                 <!-- <a href="" class="input-group-text text-decoration-none border-0"><i class="far fa-eye-slash"></i></a> -->
             </div>
-           
+
             <button type="submit" class="border-0 p-1 font-weight-bold mx-auto word-space-1">Se connecter</button>
-            <div class="my-4">
-                <a href="{{ route('password.email4reset') }}">Mot de passe oublié?</a>
+            <div class="my-4 mx-auto ">
+                <a href="{{ route('forget.password.get') }}">Mot de passe oublié?</a>
             </div>
         </form>
         <div class="text-center mt-4">

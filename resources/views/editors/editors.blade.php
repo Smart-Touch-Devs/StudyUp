@@ -28,7 +28,7 @@
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title font-weight-bold text-uppercase">Editeurs</h3>
+                    <h3 class="card-title font-weight-bold text-uppercase">Editeurs ( {{count($editors)}} )</h3>
 
                     <div class="card-tools d-flex justify-content-between">
                         <button type="button" class="btn btn-block btn-outline-success btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Ajouter un Editeur</button>
@@ -41,11 +41,8 @@
                     <table class="table table-striped projects">
                         <thead>
                             <tr>
-                                <th style="width: 1%">
-                                    N°
-                                </th>
                                 <th style="width: 20%" class="text-center">
-                                    NOM
+                                    NOM DE L'EDITEUR
                                 </th>
                                 <th style="width: 30%" class="text-center">
                                     ICONE
@@ -58,9 +55,6 @@
                         @forelse($editors as $editeur)
                         <tbody>
                             <tr>
-                                <td>
-                                    {{ $editeur->id }}
-                                </td>
                                 <td class="text-center">
                                     <a>
                                         {{ $editeur->nom }}
@@ -80,7 +74,7 @@
                                         </li>
                                     </ul>
                                 </td>
-                                <td class="  d-flex justify-content-around my-4">
+                                <td class="  d-flex justify-content-around ">
                                     <a href="{{ route('editors.edit',$editeur->id) }}">
                                         <button class="btn btn-info btn-sm " type="button">
                                             <i class="fas fa-pencil-alt">
@@ -91,16 +85,11 @@
                                     <form action="{{ route('editors.destroy',$editeur->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger btn-sm" onclick="alerte()" type="submit">
+                                        <button class="btn btn-danger btn-sm"  type="submit">
                                             <i class="fas fa-trash">
                                             </i>
                                             Supprimer
                                         </button>
-                                        <!-- <script>
-                                            function alerte(){
-                                                alert('Voulez-vous vraiment retirer cette catégorie?')
-                                            }
-                                        </script> -->
                                     </form>
                                 </td>
                                 @empty
@@ -116,6 +105,7 @@
                         </tbody>
                         @endforelse
                     </table>
+                    {{ $editors->links() }}
                 </div>
             </div>
 
