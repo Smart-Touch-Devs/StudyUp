@@ -34,12 +34,12 @@ class RegisterController extends Controller
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password')),
         ]);
-        $token =  $user->createToken('MyAuthApp')->plainTextToken;
+        // $token =  $user->createToken('MyAuthApp')->plainTextToken;
 
         $response = [
             'user' => $user,
-            'token' => $token,
+            // 'token' => $token,
         ];
-        return response()->json(['success' => "Vous pouvez vous connecter à votre espace !!!"], $response);
+        return response($response,200);
     }
 }

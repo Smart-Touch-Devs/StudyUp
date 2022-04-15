@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Redirect;
+
 
 class LoginController extends Controller
 {
@@ -31,6 +31,7 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::ADMIN;
+
 
     /**
      * Create a new controller instance.
@@ -58,9 +59,10 @@ class LoginController extends Controller
             $request->session()->regenerate();
             return redirect()->intended('/admin');
         }elseif (Auth::attempt($credentials) && $recuperation[0]->role_id == 2) {
-            return'Vous n\etes pas autorisé ';
+            $request->session()->regenerate();
+            return 'Vous etes connecté sur votre espace de lecture et de telechargement';
         }else {
-            return Redirect::back()->withErrors(['warning' => "L'un des champs entré est incorrect!"]);
+            return back()->withErrors(['warning' => "L'un des champs entré est incorrect!"]);
         }
     }
 }
