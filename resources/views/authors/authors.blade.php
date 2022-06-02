@@ -119,7 +119,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form method="post" action="" enctype="multipart/form-data">
+                            <form method="post" action="" >
                                 @csrf
                                 <div class="form-group">
                                     <label for="recipient-name" class="col-form-label">Nom:</label>

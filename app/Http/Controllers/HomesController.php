@@ -15,8 +15,8 @@ class HomesController extends Controller
      */
     public function index()
     {
-        $notifications = Notifications::all();
-        return view('home.welcome',compact('notifications'));
+        // $notifications = Notifications::all();
+        // return view('home.welcome',compact('notifications'));
     }
 
     /**

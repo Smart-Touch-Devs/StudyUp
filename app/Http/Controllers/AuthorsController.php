@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Authors;
+use App\Http\Requests\AuthorsRules;
 use Illuminate\Http\Request;
 
 class AuthorsController extends Controller
@@ -26,13 +27,9 @@ class AuthorsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AuthorsRules  $request)
     {
-        $request->validate([
-            'nom' => 'required|string|',
-            'prenom' => 'required|string|'
-
-        ]);
+        $request->validated();
         Authors::create([
             'nom' =>request('nom'),
             'prenom' =>request('prenom')
@@ -59,12 +56,9 @@ class AuthorsController extends Controller
      * @param  \App\Authors  $authors
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AuthorsRules $request, $id)
     {
-        $request->validate([
-            'nom' => 'required|string|',
-            'prenom' => 'required|string|',
-        ]);
+        $request->validated();
         $auteurs = Authors::find($id);
         $auteurs->nom =  $request->get('nom');
         $auteurs->prenom =  $request->get('prenom');

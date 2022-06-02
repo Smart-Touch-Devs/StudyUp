@@ -211,7 +211,11 @@
                                             {{ $book->page }}
                                             </td>
                                             <td class="text-center">
-                                            {{ $book->prix }} Fcfa
+                                                @if ($book->prix == null)
+                                                    Gratuit
+                                                @else
+                                                {{ $book->prix }} Fcfa
+                                                @endif
                                             </td>
                                             <td class="  d-flex justify-content-around">
                                                 <a href="{{ route('books.edit',$book->id) }}">

@@ -58,7 +58,6 @@ class BooksController extends Controller
             'page' => 'required|integer|',
             'auteur_id' => 'required',
             'pays_id' => 'required',
-            'prix' => 'required|integer|',
             'photo' => '|image|',
         ]);
 
@@ -76,6 +75,7 @@ class BooksController extends Controller
             $docs->move($destinationPath, $books);
             $input['document'] = "$books";
         }
+        
         Books::create($input);
 
         return redirect()->intended('books')->with('success', " Ajout effectué avec succes");

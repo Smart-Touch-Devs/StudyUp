@@ -12,7 +12,7 @@
     </div>
     <div class="container">
         <section class="content">
-            <form method="post" action="{{ route('authors.update',$auteurs->id) }}" enctype="multipart/form-data">
+            <form method="post" action="{{ route('authors.update',$auteurs->id) }}" >
                 @method('PATCH')
                 @csrf
                 <div class="form-group">

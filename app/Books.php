@@ -21,5 +21,14 @@ class Books extends Model
     public function langues(){
         return $this->belongsTo(Languages::class, 'langue_id');
     }
-    
+    public function category(){
+        return $this->belongsTo(Categories::class,'categorie_id');
+    }
+    public function editor(){
+        return $this->belongsTo(Editors::class,'editeur_id');
+    }
+    public function countrie(){
+        return $this->belongsTo(Countries::class,'pays_id');
+    }
+
 }

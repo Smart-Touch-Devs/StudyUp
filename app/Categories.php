@@ -12,4 +12,10 @@ class Categories extends Model
     public function scopeIdDescending($query){
         return $query->orderBy('created_at','desc');
     }
+    public function book(){
+        return $this->hasOne(Books::class,'categorie_id');
+    }
+    public function favoris(){
+        return $this->belongsTo(favoris::class);
+    }
 }

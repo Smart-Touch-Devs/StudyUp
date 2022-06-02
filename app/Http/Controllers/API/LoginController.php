@@ -17,8 +17,8 @@ class LoginController extends Controller
             'email' => ['required', 'string', 'email'],
             'password' => ['required', 'string', 'min:8'],
         ]);
-        if ($validator->fails()) {
-            return $this->sendError('Error validation', $validator->errors());
+        if ($validator->failed()) {
+            return response()->json(['error' => "Veuillez renseiller vos informations correctement"], 401);
         }
         $recuperation = DB::select('select role_id  from users where email=?', [$request->input('email')]);
         if (!Auth::attempt(['email' => $request->email, 'password' => $request->password])) {

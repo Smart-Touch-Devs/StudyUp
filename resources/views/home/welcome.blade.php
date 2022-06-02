@@ -51,7 +51,7 @@
                                 </a>
                             </div>
                             <div class="fit-content my-5">
-                                <a href="{{ asset('login') }}" class="home_registerBtn font-weight-bold text-decoration-none bg-smt-secondary text-white rounded">Créer un compte</a>
+                                <a href="{{ route('register.index') }}" class="home_registerBtn font-weight-bold text-decoration-none bg-smt-secondary text-white rounded">Créer un compte</a>
                             </div>
                         </div>
                     </div>

@@ -9,9 +9,3 @@ Route::get('/login', [LoginController::class, 'index'])->name('login.index');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.auth');
 Route::get('/register', [RegisterController::class, 'index'])->name('register.index');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.auth');
-Route::get('/confirmation', function(Request $request) {
-    if(!$request->session()->get('confirmation_data_exist')) return redirect()->route('login.index');
-    else
-    return view('auth.verify');
-    $request->session()->flush();
-})->name('auth.confirmation');

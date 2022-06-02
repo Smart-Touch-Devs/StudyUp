@@ -38,10 +38,6 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-    }
 
     public function index()
     {
@@ -55,14 +51,14 @@ class LoginController extends Controller
             'password' => ['required']
         ]);
         $recuperation = DB::select('select role_id  from users where email=?', [$request->input('email')]);
-        if(Auth::attempt($credentials) && $recuperation[0]->role_id == 1) {
+        if (Auth::attempt($credentials) && $recuperation[0]->role_id == 1) {
             $request->session()->regenerate();
             return redirect()->intended('/admin');
-        }elseif (Auth::attempt($credentials) && $recuperation[0]->role_id == 2) {
+        } elseif (Auth::attempt($credentials) && $recuperation[0]->role_id == 2) {
             $request->session()->regenerate();
-            return 'Vous etes connecté sur votre espace de lecture et de telechargement';
-        }else {
-            return back()->withErrors(['warning' => "L'un des champs entré est incorrect!"]);
+            return redirect()->route('app.index');
+        }  else {
+            return back()->with('warning', "L'un des champs entré est incorrect!");
         }
     }
 }
